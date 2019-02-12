@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Nav.css";
 
 function Nav() {
@@ -6,8 +7,7 @@ function Nav() {
     <div className="Nav__Container">
       <div className="logo">eduCards</div>
       <div className="links">
-        <div className="register">register</div>
-        <div className="login">login</div>
+        <Link to='/'><div>logout</div></Link>
       </div>
     </div>
   );

@@ -1,0 +1,7 @@
+.Nav__Container {
+    background-color: blue;
+    height: 200px;
+    width: auto;
+    display: flex;
+
+}

@@ -4,7 +4,7 @@ import './Answer.css';
 class Answer extends Component {
   render() {
     return (
-      <div className="Answer">
+      <div className="Answer__Container">
         Answer
       </div>
     );

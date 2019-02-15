@@ -25,10 +25,10 @@ class Quiz extends Component {
       question: '',
       img_url: '',
       in_deck: 0,
-      correctAnswer: 'y',
-      wrongAnswer1: 'a',
-      wrongAnswer2: 'b',
-      wrongAnswer3: 'c'
+      correctAnswer: '',
+      wrongAnswer1: '',
+      wrongAnswer2: '',
+      wrongAnswer3: ''
     };
   }
 

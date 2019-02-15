@@ -1,13 +1,14 @@
-// Dashboard breakdown: display a list of decks 
+// Dashboard breakdown: display a list of decks
 // Dashboard will store an array of decks on local state.
 // On mount, component will check id on props, and session to verify user has access.
-
-
+// Display a list of recently available decks
+// click on a deck to move to quiz page.
+// click a create button to create a new deck. a mobile with a deck form on it.
 
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { updateUser } from "./../../ducks/reducer";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import axios from "axios";
 import Deck from "./../../Components/Deck/Deck";
 import Nav from "./../../Components/Nav/Nav";
@@ -17,18 +18,7 @@ class Dashboard extends Component {
   constructor() {
     super();
     this.state = {
-      decks: [
-        {
-          id: 1,
-          name: "deckName",
-          description: "deckDescription"
-        },
-        {
-          id: 2,
-          name: "deckName2",
-          description: "deckDescription2"
-        }
-      ]
+      decks: []
     };
   }
 
@@ -37,7 +27,7 @@ class Dashboard extends Component {
     if (!id) {
       //double check sessions
       axios
-        .post("/api/user")
+        .post("/auth/user")
         .then(res => {
           // don't move
           this.props.updateUser(res.data);
@@ -49,6 +39,13 @@ class Dashboard extends Component {
     } else {
       // stay on current page
     }
+
+    axios.get('/api/decks').then(res => {
+      this.setState({
+        decks: res.data
+      })
+    })
+
   }
 
   logout = () => {
@@ -63,27 +60,29 @@ class Dashboard extends Component {
       });
   };
 
-  getDecks() {
-    axios.get("/api/decks").then(res => {
-      console.log(res.body);
-      this.setState({
-        decks: res.data
-      });
-    });
+  startDeck = (id) => {
+    this.props.history.push(`/quiz/${id}`)
   }
 
   render() {
     const mappedDecks = this.state.decks.map(eachDeckObj => {
-      return <Deck key={eachDeckObj.index} deck={eachDeckObj} />;
+      return (
+        <Deck
+          key={eachDeckObj.id}
+          deckTitle={eachDeckObj.title}
+          deckDescription={eachDeckObj.description}
+          deckImg={eachDeckObj.img_url}
+          deckID={eachDeckObj.id}
+          startDeck={this.startDeck}
+        />
+      );
     });
     return (
       <div className="Dashboard__Container">
         <Nav button1="Logout" location1="/" logout={this.logout} />
-        <button>Decks</button>
+
         <div className="Body__Container">
-          <Link to="/quiz">
-            <div className="Quiz__Button">{mappedDecks}</div>
-          </Link>
+          <div className="Deck__list">{mappedDecks}</div>
         </div>
       </div>
     );

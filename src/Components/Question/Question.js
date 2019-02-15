@@ -1,14 +1,22 @@
-import React, { Component } from 'react';
+// Question will take in props from Quiz. 
+// Question will display the question and image (if applicable)
+
+
+import React from 'react';
 import './Question.css';
 
-class Question extends Component {
-  render() {
+function Question (props) {
     return (
       <div className="Question__Container">
-        Question
+        <div>
+          {props.question}
+          </div>
+          <div>
+            <img src={`${props.img_url}`} alt={`${props.question}`} />
+          </div>
+
       </div>
     );
   }
-}
 
 export default Question;

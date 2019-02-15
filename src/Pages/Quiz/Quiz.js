@@ -12,15 +12,38 @@ import Question from "./../../Components/Question/Question";
 import Answer from "./../../Components/Answer/Answer";
 import Nav from "./../../Components/Nav/Nav";
 import axios from "axios";
+// import axios from "axios";
 
 class Quiz extends Component {
-  constructor() {
-    super();
-    this.state = {};
+  constructor(props) {
+    super(props);
+    this.state = {
+      card_id: 0,
+      question: '',
+      img_url: '',
+      in_deck: 0,
+      correctAnswer: '',
+      falseAnswer1: '',
+      falseAnswer2: '',
+      falseAnswer3: ''
+    };
   }
 
   //methods
   //componentDidMount for first question
+  componentDidMount() {
+    const id = this.props.match.params.id;
+    axios.get(`/api/card/${id}`)
+    .then(res => {
+      console.log('hit')
+      this.setState({
+        card_id: res.card.card_id,
+        question: res.card.question,
+        img_url: res.card.img_url,
+        in_deck: res.card.in_deck
+      })
+    })
+  }
 
   render() {
     return (
@@ -32,7 +55,10 @@ class Quiz extends Component {
           location2="/"
         />
         <div> Question </div>
-        <Question />
+        <Question 
+          question={this.state.question}
+          img_url={this.state.img_url}
+        />
         <div> Select an answer below: </div>
         <Answer />
       </div>

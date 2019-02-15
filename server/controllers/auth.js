@@ -1,3 +1,6 @@
+// auth will handle in the register, login, logout, and getUser functions.
+// will use bcrypt to encypt password.
+
 const bcrypt = require("bcryptjs");
 
 module.exports = {
@@ -18,7 +21,7 @@ module.exports = {
     session.user = { ...newUser };
     res.status(201).send(session.user);
   },
-  //
+  // login will check the email and compare the password to that email. Then store the id on state.
   login: async (req, res) => {
     const { email, password } = req.body;
     const { session } = req;
@@ -37,11 +40,12 @@ module.exports = {
       res.sendStatus(401);
     }
   },
+  // logout will destroy the session id.
   logout: (req, res) => {
-    console.log('logout hit')
     req.session.destroy();
     res.sendStatus(200);
   },
+  // getUser will check if the user is on session.
   getUser: (req, res) => {
     const { user } = req.session;
     if (user) {

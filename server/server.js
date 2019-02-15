@@ -33,9 +33,12 @@ massive(CONNECTION_STRING).then(db => {
 app.post("/auth/register", ac.register);
 app.post("/auth/login", ac.login);
 app.post("/auth/logout", ac.logout);
+app.post("/auth/user", ac.getUser);
 
-// Userdata
-app.post("/api/user", ac.getUser);
 
 // Standard Functionality Endpoints
-app.get("/api/decks", fc.getAllDecks)
+
+app.get("/api/decks", fc.getAllDecks) // displays decks on the dashboard
+app.get("api/card", fc.getOneCard) // populates state in quiz
+app.get("/api/answers", fc.getAnswers) // display answers for a question in quiz
+

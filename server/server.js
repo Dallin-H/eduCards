@@ -5,26 +5,37 @@
 require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
-// const session = require('express-session')
+const session = require("express-session");
 const massive = require("massive");
-const authctrl = require("./controllers/auth");
+const ac = require("./controllers/auth");
+const fc = require("./controllers/functional");
 
-const { PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
+const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
 
 const app = express();
 
 app.use(bodyParser.json());
-// app.use(session({
-//     secret: SESSION_SECRET,
-//     resave: true,
-//     saveUninitialized: false
-// }))
+app.use(
+  session({
+    secret: SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    maxAge: null
+  })
+);
 
 massive(CONNECTION_STRING).then(db => {
   app.set("db", db);
-  app.listen(PORT, () => console.log("App + DB listening on port: ", PORT));
+  app.listen(SERVER_PORT, () => console.log("App + DB listening on port: ", SERVER_PORT));
 });
 
-// Authorization Endpoints
+// Authentication Endpoints
+app.post("/auth/register", ac.register);
+app.post("/auth/login", ac.login);
+app.post("/auth/logout", ac.logout);
+
+// Userdata
+app.post("/api/user", ac.getUser);
 
 // Standard Functionality Endpoints
+app.get("/api/decks", fc.getAllDecks)

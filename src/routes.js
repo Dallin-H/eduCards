@@ -4,11 +4,11 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 
-import Landing from "./Components/Landing/Landing";
-import Login from "./Components/Landing/Login/Login";
-import Register from "./Components/Landing/Register/Register";
-import Dashboard from "./Components/Dashboard/Dashboard/Dashboard";
-import Quiz from "./Components/Quiz/Quiz/Quiz";
+import Landing from "./Pages/Landing/Landing";
+import Login from "./Pages/Login/Login";
+import Register from "./Pages/Register/Register";
+import Dashboard from "./Pages/Dashboard/Dashboard";
+import Quiz from "./Pages/Quiz/Quiz";
 
 export default (
   <Switch>

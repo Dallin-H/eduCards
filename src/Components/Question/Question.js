@@ -6,15 +6,15 @@ import React from 'react';
 import './Question.css';
 
 function Question (props) {
+  const { question, img_url } = props;
     return (
       <div className="Question__Container">
         <div>
-          {props.question}
+          {question}
           </div>
           <div>
-            <img src={`${props.img_url}`} alt={`${props.question}`} />
+            <img src={`${img_url}`} alt='' />
           </div>
-
       </div>
     );
   }

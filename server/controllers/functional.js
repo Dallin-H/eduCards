@@ -10,13 +10,13 @@ module.exports = {
     const db = req.app.get("db");
     // db.decks.
   },
-  getOneCard: (req, res) => {
+  getDeckCards: (req, res) => {
     // populate state on quiz
     const { deck_id } = req.params;
     const db = req.app.get("db");
-    db.cards.get_one_card({ deck_id: deck_id }).then(cards => {
-        let card = cards[0]
-      res.status(200).send(card);
+    db.cards.get_deck_cards({ deck_id: deck_id })
+    .then(cards => {
+      res.status(200).send(cards);
     });
   },
   createDeck: (req, res) => {
@@ -32,8 +32,14 @@ module.exports = {
     // db.decks.
   },
   getAnswers: (req, res) => {
+      // populate answers on quiz
+    const {card_id} = req.params;
     const db = req.app.get("db");
-    // db.decks.
+    db.answers.get_answers({card_id: card_id})
+    .then((answers => {
+        res.status(200).send(answers);
+        // console.log({answers})
+    }))
   },
   createAnswers: (req, res) => {
     const db = req.app.get("db");

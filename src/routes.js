@@ -20,6 +20,6 @@ export default (
     <Route path="/dashboard" component={Dashboard} />
     <Route path="/quiz/:deckID" component={Quiz} />
     <Route path="/deckform" component={DeckForm} />
-    <Route path="/cardform/:deck_id" component={CardForm} />
+    <Route path="/cardform/:deckID" component={CardForm} />
   </Switch>
 );

@@ -43,3 +43,4 @@ app.get("/api/card/:deckID", fc.getDeckCards) // populates state in quiz
 app.get("/api/answers/:cardID", fc.getAnswers) // display answers for a question in quiz
 
 app.post("/api/createdeck", fc.createDeck) // creates a new deck
+app.get("/api/getdeckbytitle/:title", fc.getDeckByTitle)

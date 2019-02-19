@@ -4,7 +4,7 @@
 // it will display that questions 4 answers, 1 correct and three wrong.
 // when clicked, the answer will change to green if right.
 // when clicked, the answer will change to red if wrong and highlight the correct in green.
-// I need a next card button. 
+// I need a next card button.
 //    the next card button will randomly select the next card to display.
 
 import React, { Component } from "react";
@@ -22,13 +22,13 @@ class Quiz extends Component {
       cards: [],
       answers: [],
       cardID: 0,
-      question: '',
-      imgURL: '',
+      question: "",
+      imgURL: "",
       inDeck: 0,
-      correctAnswer: '',
-      wrongAnswer1: '',
-      wrongAnswer2: '',
-      wrongAnswer3: ''
+      correctAnswer: "",
+      wrongAnswer1: "",
+      wrongAnswer2: "",
+      wrongAnswer3: ""
     };
   }
 
@@ -36,51 +36,55 @@ class Quiz extends Component {
   //componentDidMount for first question
   componentDidMount() {
     let deckID = this.props.match.params.deckID;
-    axios.get(`/api/card/${deckID}`)
-    .then(res => {
-      this.setState({
-        cards: res.data
-      }, () => {
-        this.displayCard()
-      })
-    })
-
-    
+    axios.get(`/api/card/${deckID}`).then(res => {
+      this.setState(
+        {
+          cards: res.data
+        },
+        () => {
+          this.displayCard();
+        }
+      );
+    });
   }
-
 
   displayCard = () => {
     //axios call to get question from currentCardIndex
-    this.setState({
-      question: this.state.cards[this.state.currentCardIndex].question,
-      cardID: this.state.cards[this.state.currentCardIndex].card_id,
-      imgURL: this.state.cards[this.state.currentCardIndex].img_url
-    }, () => {
-      this.getAnswers()
-    })
-  }
+    this.setState(
+      {
+        question: this.state.cards[this.state.currentCardIndex].question,
+        cardID: this.state.cards[this.state.currentCardIndex].card_id,
+        imgURL: this.state.cards[this.state.currentCardIndex].img_url
+      },
+      () => {
+        this.getAnswers();
+      }
+    );
+  };
 
   getAnswers = () => {
     const cardID = this.state.cardID;
-    axios.get( `/api/answers/${cardID}`)
-    .then(res => {
-      this.setState({
-        answers: res.data
-      }, () => {
-        this.displayAnswers()
-      })
-    })
-  }
+    axios.get(`/api/answers/${cardID}`).then(res => {
+      this.setState(
+        {
+          answers: res.data
+        },
+        () => {
+          this.displayAnswers();
+        }
+      );
+    });
+  };
+
   displayAnswers = () => {
     //axios call to get answer from currentCardIndex
     this.setState({
       correctAnswer: this.state.answers[0].answer_text,
       wrongAnswer1: this.state.answers[1].answer_text,
       wrongAnswer2: this.state.answers[2].answer_text,
-      wrongAnswer3: this.state.answers[3].answer_text,
-    })
-  }
-  
+      wrongAnswer3: this.state.answers[3].answer_text
+    });
+  };
 
   //next button will increment current card index
   render() {
@@ -93,17 +97,13 @@ class Quiz extends Component {
           location2="/"
         />
         <div> Question </div>
-        <Question 
-          question={this.state.question}
-          img_url={this.state.img_url}
-        />
+        <Question question={this.state.question} img_url={this.state.img_url} />
         <div> Select an answer below: </div>
-        <Answer 
-        correctAnswer={this.state.correctAnswer}
-        wrongAnswer1={this.state.wrongAnswer1}
-        wrongAnswer2={this.state.wrongAnswer2}
-        wrongAnswer3={this.state.wrongAnswer3}
-
+        <Answer
+          correctAnswer={this.state.correctAnswer}
+          wrongAnswer1={this.state.wrongAnswer1}
+          wrongAnswer2={this.state.wrongAnswer2}
+          wrongAnswer3={this.state.wrongAnswer3}
         />
       </div>
     );
@@ -111,4 +111,3 @@ class Quiz extends Component {
 }
 
 export default Quiz;
-

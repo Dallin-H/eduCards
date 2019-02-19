@@ -28,9 +28,19 @@ module.exports = {
       img_url: imgURL,
       created_by: createdBy
     })
-    .then( () => {
-      res.sendStatus(200)
+    .then( deckID => {
+      const deckID2 = deckID[0]
+      console.log(deckID2)
+      res.status(200).send(deckID2)
     });
+  },
+  getDeckByTitle: (req, res) => {
+    const { title } = req.body;
+    const db = req.app.get("db");
+    db.decks.get_deck_by_title({title: title})
+    .then(deck_id => {
+      res.status(200).send(deck_id)
+    })
   },
   getQuestion: (req, res) => {
     const db = req.app.get("db");

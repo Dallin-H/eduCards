@@ -10,7 +10,7 @@ const Deck = props => {
     >
       <h1>{props.deckTitle}</h1>
       <div>{props.deckDescription}</div>
-      <img src={`${props.deckImg}`} alt={`${props.deckTitle} deck cover`}
+      <img src={`${props.deckImg}`} alt={`${props.deckTitle} cover`}
       style={{height: 100}}
       />
     </div>

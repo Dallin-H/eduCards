@@ -3,7 +3,6 @@
 
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { updateUser } from "./../../ducks/reducer";
 import Nav from "./../../Components/Nav/Nav";
 import axios from "axios";
 import "./DeckForm.css";
@@ -15,34 +14,35 @@ class DeckForm extends Component {
       title: "",
       description: "",
       imgURL: "",
-      createdBy: 0
+      createdBy: 0,
+      deckID: 0
     };
   }
 
   componentDidMount() {
-      const { userID } = this.props;
-      console.log(userID)
+    const { userID } = this.props;
     this.setState({
-        createdBy: userID
-    })
+      createdBy: userID
+    });
   }
 
   handleChange(prop, value) {
     this.setState({
       [prop]: value
     });
-    console.log(this.state);
   }
 
   createDeck() {
     const { title, description, imgURL, createdBy } = this.state;
-    console.log(createdBy)
     axios
       .post("/api/createdeck", { title, description, imgURL, createdBy })
       .then(res => {
-        
-        this.props.history.push(`/cardform/${}`);
-      })
+        console.log(res.data)
+        console.log(res.data.deck_id)
+        this.setState({
+          deckID: res.data.deck_id
+        })
+        this.props.history.push(`/cardform/${this.state.deckID}`)})
       .catch(err => {
         console.log(err);
       });
@@ -51,7 +51,12 @@ class DeckForm extends Component {
   render() {
     return (
       <div>
-          <Nav />
+        <Nav
+          button1="Dashboard"
+          location1="/dashboard"
+          button2="Logout"
+          location2="/"
+        />
         <form>
           <div>Deck Name:</div>
           <input onChange={e => this.handleChange("title", e.target.value)} />
@@ -62,16 +67,16 @@ class DeckForm extends Component {
           <div>Image URL:</div>
           <input onChange={e => this.handleChange("img_url", e.target.value)} />
         </form>
-        <button onClick={e => this.createDeck()}>Create Deck!</button>
+        <button onClick={ () => this.createDeck()}>Create Deck!</button>
       </div>
     );
   }
 }
 
 const mapStateToProps = reduxState => {
-    return {
-        userID:reduxState.userID
-    }
-}
+  return {
+    userID: reduxState.userID
+  };
+};
 
-export default connect(mapStateToProps) (DeckForm);
+export default connect(mapStateToProps)(DeckForm);

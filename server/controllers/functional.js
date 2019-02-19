@@ -12,16 +12,25 @@ module.exports = {
   },
   getDeckCards: (req, res) => {
     // populate state on quiz
-    const { deck_id } = req.params;
+    const { deckID } = req.params;
     const db = req.app.get("db");
-    db.cards.get_deck_cards({ deck_id: deck_id })
+    db.cards.get_deck_cards({ deck_id: deckID })
     .then(cards => {
       res.status(200).send(cards);
     });
   },
   createDeck: (req, res) => {
+    const { title, description, imgURL, createdBy } = req.body;
     const db = req.app.get("db");
-    // db.decks.
+    db.decks.create_new_deck({
+      title: title,
+      description: description,
+      img_url: imgURL,
+      created_by: createdBy
+    })
+    .then( () => {
+      res.sendStatus(200)
+    });
   },
   getQuestion: (req, res) => {
     const db = req.app.get("db");
@@ -32,14 +41,13 @@ module.exports = {
     // db.decks.
   },
   getAnswers: (req, res) => {
-      // populate answers on quiz
-    const {card_id} = req.params;
+    // populate answers on quiz
+    const { cardID } = req.params;
     const db = req.app.get("db");
-    db.answers.get_answers({card_id: card_id})
-    .then((answers => {
-        res.status(200).send(answers);
-        // console.log({answers})
-    }))
+    db.answers.get_answers({ card_id: cardID }).then(answers => {
+      res.status(200).send(answers);
+      // console.log({answers})
+    });
   },
   createAnswers: (req, res) => {
     const db = req.app.get("db");

@@ -16,8 +16,8 @@ class Login extends Component {
   }
 
   componentDidMount() {
-    const { id } = this.props;
-    if (id) {
+    const { user_id } = this.props;
+    if (user_id) {
       // take user to dashboard
       this.props.history.push("/dashboard");
     } else {
@@ -90,7 +90,7 @@ class Login extends Component {
 
 const mapStateToProps = reduxState => {
   return {
-    id: reduxState.id
+    user_id: reduxState.user_id
   };
 };
 

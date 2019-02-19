@@ -6,14 +6,14 @@ const bcrypt = require("bcryptjs");
 module.exports = {
   // register will write user info to the database, encrypt the password, and store user into session.
   register: async (req, res) => {
-    const { first_name, last_name, email, password } = req.body;
+    const { firstName, lastName, email, password } = req.body;
     const { session } = req;
     const db = req.app.get("db");
     const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(password, salt);
     let newUser = await db.users.register({
-      first_name: first_name,
-      last_name: last_name,
+      first_name: firstName,
+      last_name: lastName,
       email: email,
       password: hash
     });

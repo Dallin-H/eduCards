@@ -23,8 +23,8 @@ class Dashboard extends Component {
   }
 
   componentDidMount() {
-    const { id } = this.props;
-    if (!id) {
+    const { userID } = this.props;
+    if (!userID) {
       //double check sessions
       axios
         .post("/auth/user")
@@ -40,12 +40,11 @@ class Dashboard extends Component {
       // stay on current page
     }
 
-    axios.get('/api/decks').then(res => {
+    axios.get("/api/decks").then(res => {
       this.setState({
         decks: res.data
-      })
-    })
-
+      });
+    });
   }
 
   logout = () => {
@@ -60,19 +59,24 @@ class Dashboard extends Component {
       });
   };
 
-  startDeck = (id) => {
-    this.props.history.push(`/quiz/${id}`)
+  startDeck = deckID => {
+    this.props.history.push(`/quiz/${deckID}`);
+  };
+
+  createNewDeck = () => {
+    this.props.history.push(`/deckform`);
   }
 
   render() {
+    console.log(this.state.decks)
     const mappedDecks = this.state.decks.map(eachDeckObj => {
       return (
         <Deck
-          key={eachDeckObj.id}
+          key={eachDeckObj.deck_id}
           deckTitle={eachDeckObj.title}
           deckDescription={eachDeckObj.description}
           deckImg={eachDeckObj.img_url}
-          deckID={eachDeckObj.id}
+          deckID={eachDeckObj.deck_id}
           startDeck={this.startDeck}
         />
       );
@@ -80,7 +84,11 @@ class Dashboard extends Component {
     return (
       <div className="Dashboard__Container">
         <Nav button1="Logout" location1="/" logout={this.logout} />
-
+        <div
+        onClick={e => this.createNewDeck()}
+        >
+          Create New Deck
+        </div>
         <div className="Body__Container">
           <div className="Deck__list">{mappedDecks}</div>
         </div>

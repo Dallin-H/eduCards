@@ -21,10 +21,10 @@ class Quiz extends Component {
       currentCardIndex: 0,
       cards: [],
       answers: [],
-      card_id: 1,
+      cardID: 0,
       question: '',
-      img_url: '',
-      in_deck: 0,
+      imgURL: '',
+      inDeck: 0,
       correctAnswer: '',
       wrongAnswer1: '',
       wrongAnswer2: '',
@@ -35,11 +35,9 @@ class Quiz extends Component {
   //methods
   //componentDidMount for first question
   componentDidMount() {
-
-    const id = this.props.match.params.id;
-    axios.get(`/api/card/${id}`)
+    let deckID = this.props.match.params.deckID;
+    axios.get(`/api/card/${deckID}`)
     .then(res => {
-      // console.log(res.data)
       this.setState({
         cards: res.data
       }, () => {
@@ -47,7 +45,23 @@ class Quiz extends Component {
       })
     })
 
-    const cardID = this.state.card_id;
+    
+  }
+
+
+  displayCard = () => {
+    //axios call to get question from currentCardIndex
+    this.setState({
+      question: this.state.cards[this.state.currentCardIndex].question,
+      cardID: this.state.cards[this.state.currentCardIndex].card_id,
+      imgURL: this.state.cards[this.state.currentCardIndex].img_url
+    }, () => {
+      this.getAnswers()
+    })
+  }
+
+  getAnswers = () => {
+    const cardID = this.state.cardID;
     axios.get( `/api/answers/${cardID}`)
     .then(res => {
       this.setState({
@@ -56,18 +70,7 @@ class Quiz extends Component {
         this.displayAnswers()
       })
     })
-   
   }
-  
-
-  displayCard = () => {
-    //axios call to get question from currentCardIndex
-    this.setState({
-      question: this.state.cards[this.state.currentCardIndex].question,
-      card_id: this.state.cards[this.state.currentCardIndex].id
-    })
-  }
-
   displayAnswers = () => {
     //axios call to get answer from currentCardIndex
     this.setState({
@@ -77,6 +80,7 @@ class Quiz extends Component {
       wrongAnswer3: this.state.answers[3].answer_text,
     })
   }
+  
 
   //next button will increment current card index
   render() {

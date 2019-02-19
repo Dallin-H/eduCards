@@ -13,7 +13,11 @@ function Question (props) {
           {question}
           </div>
           <div>
-            <img src={`${img_url}`} alt='' />
+            <img 
+            style={{
+              height: 100
+            }}
+            src={`${img_url}`} alt='' />
           </div>
       </div>
     );

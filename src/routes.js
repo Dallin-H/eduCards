@@ -9,6 +9,8 @@ import Login from "./Pages/Login/Login";
 import Register from "./Pages/Register/Register";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import Quiz from "./Pages/Quiz/Quiz";
+import DeckForm from "./Pages/DeckForm/DeckForm";
+import CardForm from "./Pages/CardForm/CardForm";
 
 export default (
   <Switch>
@@ -16,6 +18,8 @@ export default (
     <Route path="/login" component={Login} />
     <Route path="/register" component={Register} />
     <Route path="/dashboard" component={Dashboard} />
-    <Route path="/quiz/:id" component={Quiz} />
+    <Route path="/quiz/:deckID" component={Quiz} />
+    <Route path="/deckform" component={DeckForm} />
+    <Route path="/cardform/:deck_id" component={CardForm} />
   </Switch>
 );

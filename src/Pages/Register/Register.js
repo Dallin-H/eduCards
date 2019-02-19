@@ -9,8 +9,8 @@ class Register extends Component {
   constructor() {
     super();
     this.state = {
-      first_name: "",
-      last_name: "",
+      firstName: "",
+      lastName: "",
       email: "",
       password: ""
     };
@@ -23,9 +23,9 @@ class Register extends Component {
   }
 
   register = () => {
-    const { first_name, last_name, email, password } = this.state;
+    const { firstName, lastName, email, password } = this.state;
     axios
-      .post("/auth/register", { first_name, last_name, email, password })
+      .post("/auth/register", { firstName, lastName, email, password })
       .then(res => {
         this.props.updateUser(res.data);
         this.props.history.push("/dashboard");
@@ -37,7 +37,7 @@ class Register extends Component {
 
   render() {
     // console.log(this.state)
-    const { first_name, last_name, email, password } = this.state;
+    const { firstName, lastName, email, password } = this.state;
 
     return (
       <div className="Register__page">
@@ -47,15 +47,15 @@ class Register extends Component {
           <div>
             <div>First name:</div>
             <input
-              value={first_name}
-              onChange={e => this.handleChange("first_name", e.target.value)}
+              value={firstName}
+              onChange={e => this.handleChange("firstName", e.target.value)}
             />
           </div>
           <div>
             <div>Last name:</div>
             <input
-              value={last_name}
-              onChange={e => this.handleChange("last_name", e.target.value)}
+              value={lastName}
+              onChange={e => this.handleChange("lastName", e.target.value)}
             />
           </div>
           <div>
@@ -84,7 +84,7 @@ class Register extends Component {
 
 const mapStateToProps = reduxState => {
   return {
-    id: reduxState.id
+    user_id: reduxState.user_id
   }
 }
 

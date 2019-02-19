@@ -16,8 +16,8 @@ class Login extends Component {
   }
 
   componentDidMount() {
-    const { user_id } = this.props;
-    if (user_id) {
+    const { userID } = this.props;
+    if (userID) {
       // take user to dashboard
       this.props.history.push("/dashboard");
     } else {
@@ -46,6 +46,7 @@ class Login extends Component {
       .post("/auth/login", { email, password })
       .then(res => {
         this.props.updateUser(res.data);
+        console.log(res.data)
         this.props.history.push("/dashboard");
       })
       .catch(err => {
@@ -90,7 +91,7 @@ class Login extends Component {
 
 const mapStateToProps = reduxState => {
   return {
-    user_id: reduxState.user_id
+    userID: reduxState.userID
   };
 };
 

@@ -68,7 +68,6 @@ class Dashboard extends Component {
   }
 
   render() {
-    console.log(this.state.decks)
     const mappedDecks = this.state.decks.map(eachDeckObj => {
       return (
         <Deck

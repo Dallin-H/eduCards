@@ -15,14 +15,15 @@ class DeckForm extends Component {
       title: "",
       description: "",
       imgURL: "",
-      createdBy: ""
+      createdBy: 0
     };
   }
 
   componentDidMount() {
       const { userID } = this.props;
+      console.log(userID)
     this.setState({
-        created_by: userID
+        createdBy: userID
     })
   }
 
@@ -35,10 +36,12 @@ class DeckForm extends Component {
 
   createDeck() {
     const { title, description, imgURL, createdBy } = this.state;
+    console.log(createdBy)
     axios
       .post("/api/createdeck", { title, description, imgURL, createdBy })
       .then(res => {
-        this.props.history.push("/cardform");
+        
+        this.props.history.push(`/cardform/${}`);
       })
       .catch(err => {
         console.log(err);
@@ -71,8 +74,4 @@ const mapStateToProps = reduxState => {
     }
 }
 
-const mapDispatchToProps = {
-    updateUser
-}
-export default connect(mapStateToProps,
-    mapDispatchToProps) (DeckForm);
+export default connect(mapStateToProps) (DeckForm);

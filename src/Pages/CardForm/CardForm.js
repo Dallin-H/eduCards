@@ -15,7 +15,7 @@ class CardForm extends Component {
       correctAnswer: "",
       wrongAnswer1: "",
       wrongAnswer2: "",
-      wrongAnswer3: "",
+      wrongAnswer3: ""
     };
   }
 

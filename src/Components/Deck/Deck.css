@@ -1,0 +1,12 @@
+.Deck__Container {
+    background-color: rgb(96, 153, 148);
+    width: 200px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+img {
+    width: 100px;
+}

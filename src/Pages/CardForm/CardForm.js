@@ -5,6 +5,7 @@ import React, { Component } from "react";
 // import axios from "axios";
 import Nav from "./../../Components/Nav/Nav";
 import "./CardForm.css";
+import axios from "axios";
 
 class CardForm extends Component {
   constructor(props) {
@@ -47,13 +48,45 @@ class CardForm extends Component {
 
   createCard() {
     //axios call to post in db.
+    const {
+      question,
+      imgURL,
+      inDeck,
+      correctAnswer,
+      wrongAnswer1,
+      wrongAnswer2,
+      wrongAnswer3
+    } = this.state;
+    axios
+      .post("api/createcard", {
+        question,
+        imgURL,
+        inDeck,
+        correctAnswer,
+        wrongAnswer1,
+        wrongAnswer2,
+        wrongAnswer3
+      })
+      .then(() => {
+        this.setState({
+          question: "",
+          imgURL: "",
+          correctAnswer: "",
+          wrongAnswer1: "",
+          wrongAnswer2: "",
+          wrongAnswer3: ""
+        });
+        alert("Card Created!");
+      })
+      .catch(err => {
+        console.log(err);
+      });
   }
 
   startQuiz() {
     const { inDeck } = this.state;
-    this.props.history.push(`/quiz/${inDeck}`)
+    this.props.history.push(`/quiz/${inDeck}`);
   }
-  
 
   render() {
     return (

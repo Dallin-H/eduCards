@@ -26,7 +26,9 @@ app.use(
 
 massive(CONNECTION_STRING).then(db => {
   app.set("db", db);
-  app.listen(SERVER_PORT, () => console.log("App + DB listening on port: ", SERVER_PORT));
+  app.listen(SERVER_PORT, () =>
+    console.log("App + DB listening on port: ", SERVER_PORT)
+  );
 });
 
 // Authentication Endpoints
@@ -35,12 +37,12 @@ app.post("/auth/login", ac.login);
 app.post("/auth/logout", ac.logout);
 app.post("/auth/user", ac.getUser);
 
-
 // Standard Functionality Endpoints
 
-app.get("/api/decks", fc.getAllDecks) // displays decks on the dashboard
-app.get("/api/card/:deckID", fc.getDeckCards) // populates state in quiz
-app.get("/api/answers/:cardID", fc.getAnswers) // display answers for a question in quiz
+app.get("/api/decks", fc.getAllDecks); // displays decks on the dashboard
+app.get("/api/card/:deckID", fc.getDeckCards); // populates state in quiz
+app.get("/api/answers/:cardID", fc.getAnswers); // display answers for a question in quiz
 
-app.post("/api/createdeck", fc.createDeck) // creates a new deck
-app.get("/api/getdeckbytitle/:title", fc.getDeckByTitle)
+app.post("/api/createdeck", fc.createDeck); // creates a new deck
+app.post("/api/createcard", fc.createCard); // creeates new card and answers
+// app.get("/api/getdeckbytitle/:title", fc.getDeckByTitle);//

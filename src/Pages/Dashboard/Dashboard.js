@@ -63,9 +63,13 @@ class Dashboard extends Component {
     this.props.history.push(`/quiz/${deckID}`);
   };
 
+  editDeck = deckID => {
+    this.props.history.push(`/deckedit/${deckID}`);
+  }
+
   createNewDeck = () => {
     this.props.history.push(`/deckform`);
-  }
+  };
 
   render() {
     const mappedDecks = this.state.decks.map(eachDeckObj => {
@@ -77,19 +81,16 @@ class Dashboard extends Component {
           deckImg={eachDeckObj.img_url}
           deckID={eachDeckObj.deck_id}
           startDeck={this.startDeck}
+          editDeck={this.editDeck}
         />
       );
     });
     return (
       <div className="Dashboard__Container">
         <Nav button1="Logout" location1="/" logout={this.logout} />
-        <div
-        onClick={e => this.createNewDeck()}
-        >
-          Create New Deck
-        </div>
+        <div onClick={e => this.createNewDeck()}>Create New Deck</div>
         <div className="Body__Container">
-          <div className="Deck__list">{mappedDecks}</div>
+          <div className="Deck__List">{mappedDecks}</div>
         </div>
       </div>
     );

@@ -37,8 +37,6 @@ class DeckForm extends Component {
     axios
       .post("/api/createdeck", { title, description, imgURL, createdBy })
       .then(res => {
-        console.log(res.data)
-        console.log(res.data.deck_id)
         this.setState({
           deckID: res.data.deck_id
         })

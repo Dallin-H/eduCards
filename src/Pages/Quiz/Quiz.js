@@ -36,11 +36,13 @@ class Quiz extends Component {
   //componentDidMount for first question
   componentDidMount() {
     let deckID = this.props.match.params.deckID;
-    axios.get(`/api/card/${deckID}`).then(res => {
-      this.setState(
-        {
-          cards: res.data
-        },
+    axios
+      .get(`/api/card/${deckID}`)
+      .then(res => {
+        this.setState(
+          {
+           cards: res.data
+          },
         () => {
           this.displayCard();
         }

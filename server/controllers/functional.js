@@ -5,16 +5,20 @@ module.exports = {
       res.status(200).send(decks);
     });
   },
-  getOneDeck: (req, res) => {
-    // retrieve a specific deck to display as a thumbnail on the quiz page.
+  getDeck: (req, res) => {
+    // retrieve a specific deck by deckID
+    const { deckID } = req.params;
     const db = req.app.get("db");
-    // db.decks.
+    db.decks.get_one_deck({ deckID: deckID }).then(deckArr => {
+      const deck = deckArr[0];
+      res.status(200).send(deck);
+    });
   },
   getDeckCards: (req, res) => {
     // populate state on quiz
     const { deckID } = req.params;
     const db = req.app.get("db");
-    db.cards.get_deck_cards({ deck_id: deckID }).then(cards => {
+    db.cards.get_deck_cards({ deckID: deckID }).then(cards => {
       res.status(200).send(cards);
     });
   },
@@ -28,19 +32,36 @@ module.exports = {
         img_url: imgURL,
         created_by: createdBy
       })
-      .then(deckID => {
-        const deckID2 = deckID[0];
-        res.status(200).send(deckID2);
+      .then(deckIDArr => {
+        const deckID = deckIDArr[0];
+        res.status(200).send(deckID);
       });
   },
-  // getDeckByTitle: (req, res) => {
-  //   const { title } = req.body;
-  //   const db = req.app.get("db");
-  //   db.decks.get_deck_by_title({title: title})
-  //   .then(deck_id => {
-  //     res.status(200).send(deck_id)
-  //   })
-  // },
+  updateDeck: (req, res) => {
+    const { deckID, title, description, imgURL } = req.body;
+    const db = req.app.get("db");
+    db.decks
+      .update_deck({
+        deckID: deckID,
+        title: title,
+        description: description,
+        imgURL: imgURL
+      })
+      .then(deckArr => {
+        const deck = deckArr[0];
+        res.status(200).send(deck);
+      });
+  },
+  deleteDeck: (req, res) => {
+    const {deckID} = req.body;
+    const db = req.app.get("db");
+    
+
+    db.decks.delete_deck({deckID: deckID})
+    .then( () => {
+      res.sendStatus(200)
+    })
+  },
   getQuestion: (req, res) => {
     const db = req.app.get("db");
     // db.decks.
@@ -61,7 +82,7 @@ module.exports = {
     db.cards
       .create_card({ question: question, img_url: imgURL, in_deck: inDeck })
       .then(newCardID => {
-        cardID = newCardID[0].card_id
+        cardID = newCardID[0].card_id;
         db.answers
           .create_answers({
             correct_Answer: correctAnswer,

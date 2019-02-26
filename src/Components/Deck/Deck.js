@@ -11,7 +11,6 @@ const Deck = props => {
       <div className="Deck__Description">{props.deckDescription}</div>
       <img className='Cover__Image'
         src={`${props.deckImg}`}
-        onError="this.src='./../../decks_icon.png';"
         alt={`${props.deckTitle} cover`}
         style={{ height: 100 }}
       />

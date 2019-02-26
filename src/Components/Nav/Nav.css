@@ -1,23 +1,106 @@
-@import url('https://fonts.googleapis.com/css?family=Nova+Flat|Permanent+Marker');
+@import url("https://fonts.googleapis.com/css?family=Nova+Flat|Permanent+Marker");
 
-.Nav__Container {
-    background-color: #0E3F82;
+@media all and (min-width: 1024px) {
+  .Nav__Container {
+    background-color: #003459;
     height: 60px;
     width: auto;
     display: flex;
     justify-content: space-around;
-    color: #CAC436;
-}
+    color: #cac436;
+  }
 
-.logo {
+  .logo {
     font-size: 40px;
-    font-family: 'Permanent Marker', cursive;
-    margin-top: 5px;
+    font-family: "Permanent Marker", cursive;
+    margin-top: 7px;
+  }
+
+  .Menu {
+    width: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: "Nova Flat", cursive;
+    margin-top: 20px;
+    font-size: 20px;
+  }
 }
 
-.links{
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .Nav__Container {
+    background-color: #003459;
+    height: 60px;
+    width: auto;
     display: flex;
-    justify-content: space-evenly;
-    font-family: 'Nova Flat', cursive; 
+    justify-content: space-around;
+    color: #cac436;
+  }
+
+  .logo {
+    font-size: 40px;
+    font-family: "Permanent Marker", cursive;
+    margin-top: 7px;
+  }
+
+  .Menu {
+    width: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: "Nova Flat", cursive;
     margin-top: 20px;
+    font-size: 20px;
+  }
+}
+
+@media all and (min-width: 480px) and (max-width: 768px) {
+  .Nav__Container {
+    background-color: #003459;
+    height: 60px;
+    width: auto;
+    display: flex;
+    justify-content: space-around;
+    color: #cac436;
+  }
+
+  .logo {
+    font-size: 40px;
+    font-family: "Permanent Marker", cursive;
+    margin-top: 7px;
+  }
+
+  .Menu {
+    width: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: "Nova Flat", cursive;
+    margin-top: 20px;
+    font-size: 20px;
+  }
+}
+
+@media all and (max-width: 480px) {
+  .Nav__Container {
+    background-color: #003459;
+    height: 60px;
+    width: auto;
+    display: flex;
+    justify-content: space-around;
+    color: #cac436;
+  }
+
+  .logo {
+    font-size: 40px;
+    font-family: "Permanent Marker", cursive;
+    margin-top: 7px;
+  }
+
+  .Menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-family: "Nova Flat", cursive;
+  }
 }

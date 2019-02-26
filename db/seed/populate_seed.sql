@@ -1,6 +1,6 @@
 insert into users ( first_name, last_name, email, password, is_premium)
-values ('Dallin', 'Hyde', 'dallinhyde@gmail.com', 'hyde', t),
-        ('Stephanie', 'Aranda', 'stephanieA@gmail.com', 'aranda', f);
+values ('Dallin', 'Hyde', 'dallinhyde@gmail.com', 'hyde', true),
+        ('Stephanie', 'Aranda', 'stephanieA@gmail.com', 'aranda', false);
 
 insert into decks (title, description, img_url, created_by)
 values ('Algebra', 'Beginners terms to Algebra', 'https://magoosh.com/ged/files/2017/03/shutterstock_521153674.jpg', 1),
@@ -11,11 +11,11 @@ values ('What is the definition of MEDIAN?', null, 1),
         ('What is the outcome of this code?', 'https://cdn-images-1.medium.com/max/1600/1*4YWAhyJYbdFDYtJTr57G0Q.png', 2);
 
 insert into answers (answer_text, is_correct, in_card)
-values ('denoting or relating to a value or quantity lying at the midpoint of a frequency distribution of observed values or quantities, such that there is an equal probability of falling above or below it.', t, 1),
-        ('wrong answer', f, 1),
-        ('wrong answer', f, 1),
-        ('wrong answer', f, 1),
-        ('// strawberries', t, 2),
-        ('wrong answer', f, 2),
-        ('wrong answer', f, 2),
-        ('wrong answer', f, 2);
+values ('denoting or relating to a value or quantity lying at the midpoint of a frequency distribution of observed values or quantities, such that there is an equal probability of falling above or below it.', true, 1),
+        ('wrong answer', false, 1),
+        ('wrong answer', false, 1),
+        ('wrong answer', false, 1),
+        ('// strawberries', true, 2),
+        ('wrong answer', false, 2),
+        ('wrong answer', false, 2),
+        ('wrong answer', false, 2);

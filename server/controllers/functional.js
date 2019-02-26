@@ -53,13 +53,18 @@ module.exports = {
       });
   },
   deleteDeck: (req, res) => {
-    const {deckID} = req.body;
+    const {deckID} = req.params;
     const db = req.app.get("db");
-    
 
-    db.decks.delete_deck({deckID: deckID})
-    .then( () => {
-      res.sendStatus(200)
+    db.cards.get_deck_cards({deckID: deckID}) // returns an array of all cards for that deck.
+    .then(cardsArr => {
+      for (let i = 0; i < cardsArr.length; i++) {
+        db.answers.delete_by_cards({cardID: cardsArr[i].card_id}) // deletes all answers for the cards in the array.
+      }
+      db.decks.delete_deck({deckID: deckID}) // deletes cards then deletes the deck.
+      .then( () => {
+        res.sendStatus(200)
+      })
     })
   },
   getQuestion: (req, res) => {

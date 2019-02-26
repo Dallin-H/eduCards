@@ -25,7 +25,7 @@ create table cards (
 create table availability (
   availability_id serial primary key,
   user_id int references users(id),
-  deck_id int references (decksdeck_id)
+  deck_id int references decks(deck_id)
 );
 
 create table answers (

@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { updateUser } from './../../ducks/reducer';
+import { updateUser } from "./../../ducks/reducer";
 import Nav from "./../../Components/Nav/Nav";
-import "./Register.css";
 import axios from "axios";
+import "./Register.css";
 
 class Register extends Component {
   constructor() {
@@ -40,43 +40,47 @@ class Register extends Component {
     const { firstName, lastName, email, password } = this.state;
 
     return (
-      <div className="Register__page">
+      <div>
         <Nav button1="Back" location1="/" />
-        <div> Welcome! Fill out the form below to create an account. </div>
-        <form>
-          <div>
-            <div>First name:</div>
-            <input
-              value={firstName}
-              onChange={e => this.handleChange("firstName", e.target.value)}
-            />
-          </div>
-          <div>
-            <div>Last name:</div>
-            <input
-              value={lastName}
-              onChange={e => this.handleChange("lastName", e.target.value)}
-            />
-          </div>
-          <div>
-            <div>Email:</div>
-            <input
-              value={email}
-              type="email"
-              onChange={e => this.handleChange("email", e.target.value)}
-            />
-          </div>
-          <div>
-            <div>Password:</div>
-            <input
-              type="new-password"
-              value={password}
-              onChange={e => this.handleChange("password", e.target.value)}
-            />
-          </div>
+        <div className="Body__Container">
+          <div className="Instructions"> Welcome! Fill out the form below to create an account. </div>
+          <div className="Box">
+            <div>
+              <div>First name:</div>
+              <input
+                value={firstName}
+                onChange={e => this.handleChange("firstName", e.target.value)}
+              />
+            </div>
 
-          <button onClick={this.register}>Create Account</button>
-        </form>
+            <div>
+              <div>Last name:</div>
+              <input
+                value={lastName}
+                onChange={e => this.handleChange("lastName", e.target.value)}
+              />
+            </div>
+
+            <div>
+              <div>Email:</div>
+              <input
+                value={email}
+                type="email"
+                onChange={e => this.handleChange("email", e.target.value)}
+              />
+            </div>
+
+            <div>
+              <div>Password:</div>
+              <input
+                type="new-password"
+                value={password}
+                onChange={e => this.handleChange("password", e.target.value)}
+              />
+            </div>
+            <button onClick={this.register}>Create Account</button>
+          </div>
+        </div>
       </div>
     );
   }
@@ -85,11 +89,14 @@ class Register extends Component {
 const mapStateToProps = reduxState => {
   return {
     user_id: reduxState.user_id
-  }
-}
+  };
+};
 
 const mapDispatchToProps = {
   updateUser
-}
+};
 
-export default connect(mapStateToProps, mapDispatchToProps) (Register);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Register);

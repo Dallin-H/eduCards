@@ -1,12 +1,50 @@
-.Deck__Container {
-    background-color: rgb(96, 153, 148);
-    width: 200px;
-    margin-top: 10px;
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Permanent+Marker");
+
+@media all and (min-width: 1024px) and (max-width: 1280px) {
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+}
+
+@media all and (min-width: 480px) and (max-width: 768px) {
+  .Deck__Container {
+    background-color: #007ea7;
+    width: 400px;
+    margin: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+
+  .Cover__Image {
+    width: 100px;
+    margin-left: calc(50% - 50px);
+  }
 }
 
-img {
+@media all and (max-width: 480px) {
+  .Deck__Container {
+    background-color: #007ea7;
+    width: 200px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .Deck__Title {
+    font-size: 25px;
+    margin: 5px;
+  }
+
+  .Deck__Description {
+    color: #c5c5c5;
+    margin: 5px;
+  }
+
+  .Cover__Image {
     width: 100px;
+    margin-left: calc(50% - 50px);
+    margin-bottom: 5px;
+  }
 }

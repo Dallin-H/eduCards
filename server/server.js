@@ -46,4 +46,5 @@ app.get("/api/answers/:cardID", fc.getAnswers); // display answers for a questio
 app.post("/api/createdeck", fc.createDeck); // creates a new deck
 app.post("/api/createcard", fc.createCard); // creeates new card and answers
 app.get("/api/getdeck/:deckID", fc.getDeck);// retrieves deck by ID
-app.put("/api/updatedeck", fc.updateDeck)
+app.put("/api/updatedeck", fc.updateDeck); // updates deck with new info
+app.delete("/api/deletedeck/:deckID", fc.deleteDeck); //deletes decks and all corresponding cards and answers.

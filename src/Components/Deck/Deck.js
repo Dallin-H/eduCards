@@ -7,10 +7,11 @@ import "./Deck.css";
 const Deck = props => {
   return (
     <div className="Deck__Container">
-      <h1>{props.deckTitle}</h1>
-      <div>{props.deckDescription}</div>
-      <img
+      <div className="Deck__Title">{props.deckTitle}</div>
+      <div className="Deck__Description">{props.deckDescription}</div>
+      <img className='Cover__Image'
         src={`${props.deckImg}`}
+        onError="this.src='./../../decks_icon.png';"
         alt={`${props.deckTitle} cover`}
         style={{ height: 100 }}
       />

@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Permanent+Marker");
+
+@media all and (min-width: 1024px) {
+  .Body__Container {
+    background-color: #00171f;
+    justify-content: flex-start;
+    color: #ffffff;
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    height: auto;
+  }
+
+  .Instructions {
+    margin: 25px;
+  }
+
+  button {
+    background: transparent;
+    border: none;
+  }
+
+  .linebreak {
+    height: 2px;
+    width: 175px;
+    background-color: #ffffff;
+    margin-bottom: 15px;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .Body__Container {
+    background-color: #00171f;
+    justify-content: flex-start;
+    color: #ffffff;
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    height: auto;
+  }
+
+  .Instructions {
+    margin: 25px;
+  }
+
+  button {
+    background: transparent;
+    border: none;
+  }
+
+  .linebreak {
+    height: 2px;
+    width: 175px;
+    background-color: #ffffff;
+    margin-bottom: 15px;
+  }
+}
+
+@media all and (min-width: 480px) and (max-width: 768px) {
+  .Body__Container {
+    background-color: #00171f;
+    justify-content: flex-start;
+    color: #ffffff;
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    min-height: 100vh;
+    height: auto;
+  }
+
+  .Instructions {
+    margin: 25px;
+  }
+
+  button {
+    background: transparent;
+    border: none;
+  }
+
+  .linebreak {
+    height: 2px;
+    width: 175px;
+    background-color: #ffffff;
+    margin-bottom: 15px;
+  }
+
+  .Deck__List {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: no-wrap;
+	justify-content: flex-start;
+	align-items: center;
+    align-content: space-around;
+    }
+}
+
+@media all and (max-width: 480px) {
+  .Body__Container {
+    background-color: #00171f;
+    justify-content: flex-start;
+    color: #ffffff;
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    height: auto;
+  }
+
+  .Instructions {
+    margin: 25px;
+  }
+
+  button {
+    background: transparent;
+    border: none;
+  }
+
+  .linebreak {
+    height: 2px;
+    width: 175px;
+    background-color: #ffffff;
+    margin-bottom: 15px;
+  }
+}

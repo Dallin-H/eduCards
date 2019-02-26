@@ -55,9 +55,9 @@ class DeckEdit extends Component {
   deleteDeck = () => {
     const { deckID } = this.state;
     axios
-      .delete(`/api/deletedeck`, {deckID})
+      .delete(`/api/deletedeck/${deckID}`)
       .then(res => {
-        alert('Deck deleted')
+        alert('Deck has been deleted')
         this.props.history.push('/dashboard')
       })
       .catch(err => {

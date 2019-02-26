@@ -1,2 +1,2 @@
 select * from cards
-where in_deck = ${deck_id};
+where in_deck = ${deckID};

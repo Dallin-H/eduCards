@@ -13,7 +13,7 @@ class DeckForm extends Component {
     this.state = {
       title: "",
       description: "",
-      imgURL: "",
+      imgURL: "https://static.thenounproject.com/png/219525-200.png",
       createdBy: 0,
       deckID: 0
     };

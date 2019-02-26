@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Permanent+Marker");
+
+@media all and (min-width: 1024px) {
+    .Body__Container {
+        background-color: #00171f;
+        justify-content: flex-start;
+        color: #ffffff;
+        font-family: "Open Sans", sans-serif;
+        text-align: center;
+      }
+    
+      .Box {
+        width: 300px;
+        height: 50vh;
+        margin-top: 20px;
+        flex-direction: column;
+        align-items: center;
+        color: black;
+        font-family: "Open Sans", sans-serif;
+      }
+      
+      .Instructions {
+          margin: 25px;
+      }
+    
+      input {
+          margin-top: 10px;
+      }
+    
+      button {
+          background: transparent;
+          border: none;
+      }
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+    .Body__Container {
+        background-color: #00171f;
+        justify-content: flex-start;
+        color: #ffffff;
+        font-family: "Open Sans", sans-serif;
+        text-align: center;
+      }
+    
+      .Box {
+        width: 500px;
+        height: 50vh;
+        margin-top: 20px;
+        flex-direction: column;
+        align-items: center;
+        color: black;
+        font-family: "Open Sans", sans-serif;
+      }
+      
+      .Instructions {
+          margin: 25px;
+      }
+    
+      input {
+          margin-top: 10px;
+      }
+    
+      button {
+          background: transparent;
+          border: none;
+      }
+}
+
+@media all and (min-width: 480px) and (max-width: 768px) {
+    .Body__Container {
+        background-color: #00171f;
+        justify-content: flex-start;
+        color: #ffffff;
+        font-family: "Open Sans", sans-serif;
+        text-align: center;
+      }
+    
+      .Box {
+        width: 300px;
+        height: 50vh;
+        margin-top: 20px;
+        flex-direction: column;
+        align-items: center;
+        color: black;
+        font-family: "Open Sans", sans-serif;
+      }
+      
+      .Instructions {
+          margin: 25px;
+      }
+    
+      input {
+          margin-top: 10px;
+      }
+    
+      button {
+          background: transparent;
+          border: none;
+      }
+}
+
+@media all and (max-width: 480px) {
+  .Body__Container {
+    background-color: #00171f;
+    justify-content: flex-start;
+    color: #ffffff;
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+  }
+
+  .Box {
+    width: 300px;
+    height: 50vh;
+    margin-top: 20px;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+    font-family: "Open Sans", sans-serif;
+  }
+  
+  .Instructions {
+      margin: 25px;
+  }
+
+  input {
+      margin-top: 10px;
+  }
+
+  button {
+      background: transparent;
+      border: none;
+  }
+}

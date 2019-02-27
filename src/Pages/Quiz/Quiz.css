@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Permanent+Marker");
+
+@media all and (min-width: 1024px) {
+    .Body__Quiz {
+        background-color: #00171f;
+        min-height: 100vh;
+        width: auto;
+      }
+    
+      .Header__Quiz {
+        color: #d3d3d3;
+        padding-top: 10vh;
+        padding-bottom: 15px;
+        padding-left: 5vw;
+        font-size: 2em;
+        font-family: "Open Sans", sans-serif;
+      }
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .Body__Quiz {
+    background-color: #00171f;
+    min-height: 100vh;
+    width: auto;
+  }
+
+  .Header__Quiz {
+    color: #d3d3d3;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 5vw;
+    font-size: 2em;
+    font-family: "Open Sans", sans-serif;
+  }
+}
+
+@media all and (min-width: 480px) and (max-width: 768px) {
+  .Body__Quiz {
+    background-color: #00171f;
+    min-height: 100vh;
+    width: auto;
+  }
+
+  .Header__Quiz {
+    color: #d3d3d3;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 5vw;
+    font-family: "Open Sans", sans-serif;
+  }
+}
+
+@media all and (max-width: 480px) {
+  .Body__Quiz {
+    background-color: #00171f;
+    min-height: 100vh;
+    width: auto;
+  }
+
+  .Header__Quiz {
+    color: #d3d3d3;
+    padding: 15px;
+    font-family: "Open Sans", sans-serif;
+  }
+}

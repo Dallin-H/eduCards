@@ -86,13 +86,21 @@ class Dashboard extends Component {
       );
     });
     return (
-      <div className="Dashboard__Page">
+      <div className="Page__Dashboard">
         <Nav button1="Logout" location1="/" logout={this.logout} />
-        <div className="Body__Container">
-        <div className="Instructions"
+        <div className="Body__Container__Dashboard">
+        <div className="Instructions__Dashboard"
         onClick={e => this.createNewDeck()}>Create New Deck</div>
-        <div className="linebreak"></div>
-          <div className="Deck__List">{mappedDecks}</div>
+        <div className="Linebreak" />
+        <div className="Divider">
+          <div className="Section1">
+            Section1
+          </div>
+          <div className="Deck__List__Dashboard">{mappedDecks}</div>
+          <div className="Section2">
+            Section2
+          </div>
+        </div>
         </div>
       </div>
     );

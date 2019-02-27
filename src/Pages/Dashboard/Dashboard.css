@@ -1,17 +1,21 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Permanent+Marker");
 
 @media all and (min-width: 1024px) {
-  .Body__Container {
+  .Body__Container__Dashboard {
     background-color: #00171f;
+    display: flex;
+    flex-direction: column;
     justify-content: flex-start;
+    align-items: center;
     color: #ffffff;
     font-family: "Open Sans", sans-serif;
     text-align: center;
-    height: auto;
+
+    max-width: 100vw;
   }
 
-  .Instructions {
-    margin: 25px;
+  .Instructions__Dashboard {
+    padding: 25px;
   }
 
   button {
@@ -19,26 +23,51 @@
     border: none;
   }
 
-  .linebreak {
+  .Linebreak {
     height: 2px;
     width: 175px;
     background-color: #ffffff;
     margin-bottom: 15px;
+  }
+
+  .Deck__List__Dashboard {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-around;
+  }
+
+  .Divider {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: baseline;
+  }
+
+  .Section1, .Section2 {
+    width: 400px;
   }
 }
 
 @media all and (min-width: 768px) and (max-width: 1024px) {
-  .Body__Container {
+  .Body__Container__Dashboard {
     background-color: #00171f;
+    display: flex;
+    flex-direction: column;
     justify-content: flex-start;
+    align-items: center;
     color: #ffffff;
     font-family: "Open Sans", sans-serif;
     text-align: center;
     height: auto;
+
+    max-width: 100vw;
   }
 
-  .Instructions {
-    margin: 25px;
+  .Instructions__Dashboard {
+    padding: 25px;
   }
 
   button {
@@ -46,27 +75,42 @@
     border: none;
   }
 
-  .linebreak {
+  .Linebreak {
     height: 2px;
     width: 175px;
     background-color: #ffffff;
     margin-bottom: 15px;
+  }
+
+  .Deck__List__Dashboard {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: no-wrap;
+    justify-content: center;
+    align-content: space-around;
+  }
+
+  .Section1,
+  .Section2 {
+    visibility: hidden;
   }
 }
 
 @media all and (min-width: 480px) and (max-width: 768px) {
-  .Body__Container {
+  .Body__Container__Dashboard {
     background-color: #00171f;
+    display: flex;
+    flex-direction: column;
     justify-content: flex-start;
+    align-items: center;
     color: #ffffff;
     font-family: "Open Sans", sans-serif;
     text-align: center;
-    min-height: 100vh;
     height: auto;
   }
 
-  .Instructions {
-    margin: 25px;
+  .Instructions__Dashboard {
+    padding: 25px;
   }
 
   button {
@@ -74,35 +118,37 @@
     border: none;
   }
 
-  .linebreak {
+  .Linebreak {
     height: 2px;
     width: 175px;
     background-color: #ffffff;
     margin-bottom: 15px;
   }
 
-  .Deck__List {
-	display: flex;
-	flex-direction: column;
-	flex-wrap: no-wrap;
-	justify-content: flex-start;
-	align-items: center;
+  .Deck__List__Dashboard {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: no-wrap;
+    justify-content: center;
     align-content: space-around;
-    }
+  }
 }
 
 @media all and (max-width: 480px) {
-  .Body__Container {
+  .Body__Container__Dashboard {
     background-color: #00171f;
+    display: flex;
+    flex-direction: column;
     justify-content: flex-start;
+    align-items: center;
     color: #ffffff;
     font-family: "Open Sans", sans-serif;
     text-align: center;
     height: auto;
   }
 
-  .Instructions {
-    margin: 25px;
+  .Instructions__Dashboard {
+    padding: 25px;
   }
 
   button {
@@ -110,10 +156,18 @@
     border: none;
   }
 
-  .linebreak {
+  .Linebreak {
     height: 2px;
     width: 175px;
     background-color: #ffffff;
-    margin-bottom: 15px;
+    margin-left: 10px;
+  }
+
+  .Deck__List__Dashboard {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: no-wrap;
+    justify-content: center;
+    align-content: space-around;
   }
 }

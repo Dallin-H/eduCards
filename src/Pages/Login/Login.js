@@ -57,11 +57,11 @@ class Login extends Component {
     const { email, password } = this.state;
 
     return (
-      <div className="Login__page">
+      <div className="Page__Login">
         <Nav button1="Back" location1="/" />
-        <div className="Body__Container">
-          <div className="Instructions"> Welcome back! </div>
-          <div className="Box">
+        <div className="Body__Container__Login">
+          <div className="Instructions__Login"> Welcome back! </div>
+          <div className="Box__Login">
             <div>
               <div>Email:</div>
               <input

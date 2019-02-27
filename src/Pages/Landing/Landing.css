@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Permanent+Marker");
 
 @media all and (min-width: 1024px) {
-  .Body__Container {
+  .Body__Container__Landing {
     background-color: #00171f;
     height: 100vh;
     display: flex;
@@ -10,7 +10,7 @@
     align-items: center;
   }
 
-  .Box {
+  .Box__Landing {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -22,7 +22,7 @@
     margin-top: 40px;
     margin-bottom: 40px;
   }
-  .TextBox {
+  .TextBox__Landing {
     color: #ffffff;
     font-family: "Open Sans", sans-serif;
     width: 90%;
@@ -32,7 +32,7 @@
 }
 
 @media all and (min-width: 768px) and (max-width: 1024px) {
-  .Body__Container {
+  .Body__Container__Landing {
     background-color: #00171f;
     height: 100vh;
     display: flex;
@@ -41,7 +41,7 @@
     align-items: center;
   }
 
-  .Box {
+  .Box__Landing {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -54,7 +54,7 @@
     margin-bottom: 40px;
   }
 
-  .TextBox {
+  .TextBox__Landing {
     color: #ffffff;
     font-family: "Open Sans", sans-serif;
     width: 90%;
@@ -64,7 +64,7 @@
 }
 
 @media all and (min-width: 480px) and (max-width: 768px) {
-  .Body__Container {
+  .Body__Container__Landing {
     background-color: #00171f;
     height: 100vh;
     display: flex;
@@ -73,7 +73,7 @@
     align-items: center;
   }
 
-  .Box {
+  .Box__Landing {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -86,7 +86,7 @@
     margin-bottom: 40px;
   }
 
-  .TextBox {
+  .TextBox__Landing {
     color: #ffffff;
     font-family: "Open Sans", sans-serif;
     width: 90%;
@@ -96,7 +96,7 @@
 }
 
 @media all and (max-width: 480px) {
-  .Body__Container {
+  .Body__Container__Landing {
     background-color: #00171f;
     height: 100vh;
     display: flex;
@@ -105,20 +105,19 @@
     align-items: center;
   }
 
-  .Box {
+  .Box__Landing {
     display: flex;
     justify-content: space-around;
     align-items: center;
     background-color: #007ea7;
     width: 300px;
     height: 150px;
-    min-height: 100px;
     border-radius: 7px;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
   
-  .TextBox {
+  .TextBox__Landing {
     color: #ffffff;
     font-family: "Open Sans", sans-serif;
     width: 90%;

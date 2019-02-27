@@ -12,6 +12,8 @@ import Question from "./../../Components/Question/Question";
 import Answer from "./../../Components/Answer/Answer";
 import Nav from "./../../Components/Nav/Nav";
 import axios from "axios";
+
+import "./Quiz.css";
 // import axios from "axios";
 
 class Quiz extends Component {
@@ -36,13 +38,11 @@ class Quiz extends Component {
   //componentDidMount for first question
   componentDidMount() {
     let deckID = this.props.match.params.deckID;
-    axios
-      .get(`/api/card/${deckID}`)
-      .then(res => {
-        this.setState(
-          {
-           cards: res.data
-          },
+    axios.get(`/api/card/${deckID}`).then(res => {
+      this.setState(
+        {
+          cards: res.data
+        },
         () => {
           this.displayCard();
         }
@@ -98,15 +98,22 @@ class Quiz extends Component {
           button2="Logout"
           location2="/"
         />
-        <div> Question </div>
-        <Question question={this.state.question} img_url={this.state.img_url} />
-        <div> Select an answer below: </div>
-        <Answer
-          correctAnswer={this.state.correctAnswer}
-          wrongAnswer1={this.state.wrongAnswer1}
-          wrongAnswer2={this.state.wrongAnswer2}
-          wrongAnswer3={this.state.wrongAnswer3}
-        />
+        <div className="Body__Quiz">
+          <div className="Header__Quiz"> Question: </div>
+          <div className="Linebreak" />
+          <Question
+            question={this.state.question}
+            imgURL={this.state.imgURL}
+          />
+          <div className="Header__Quiz"> Select an answer below: </div>
+          <div className="Linebreak" />
+          <Answer
+            correctAnswer={this.state.correctAnswer}
+            wrongAnswer1={this.state.wrongAnswer1}
+            wrongAnswer2={this.state.wrongAnswer2}
+            wrongAnswer3={this.state.wrongAnswer3}
+          />
+        </div>
       </div>
     );
   }

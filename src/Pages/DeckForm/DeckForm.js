@@ -69,7 +69,9 @@ class DeckForm extends Component {
             <input
               onChange={e => this.handleChange("img_url", e.target.value)}
             />
-            <button onClick={() => this.createDeck()}>Create Deck!</button>
+            <button className="Create__Deck" onClick={() => this.createDeck()}>
+              Create Deck!
+            </button>
           </div>
         </div>
       </div>

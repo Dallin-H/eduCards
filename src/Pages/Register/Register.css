@@ -1,125 +1,37 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Permanent+Marker");
 
 @media all and (min-width: 1024px) {
-    .Body__Container {
-        background-color: #00171f;
-        justify-content: flex-start;
-        color: #ffffff;
-        font-family: "Open Sans", sans-serif;
-        text-align: center;
-      }
-    
-      .Box {
-        width: 300px;
-        height: 50vh;
-        margin-top: 20px;
-        flex-direction: column;
-        align-items: center;
-        color: black;
-        font-family: "Open Sans", sans-serif;
-      }
-      
-      .Instructions {
-          margin: 25px;
-      }
-    
-      input {
-          margin-top: 10px;
-      }
-    
-      button {
-          background: transparent;
-          border: none;
-      }
-}
-
-@media all and (min-width: 768px) and (max-width: 1024px) {
-    .Body__Container {
-        background-color: #00171f;
-        justify-content: flex-start;
-        color: #ffffff;
-        font-family: "Open Sans", sans-serif;
-        text-align: center;
-      }
-    
-      .Box {
-        width: 500px;
-        height: 50vh;
-        margin-top: 20px;
-        flex-direction: column;
-        align-items: center;
-        color: black;
-        font-family: "Open Sans", sans-serif;
-      }
-      
-      .Instructions {
-          margin: 25px;
-      }
-    
-      input {
-          margin-top: 10px;
-      }
-    
-      button {
-          background: transparent;
-          border: none;
-      }
-}
-
-@media all and (min-width: 480px) and (max-width: 768px) {
-    .Body__Container {
-        background-color: #00171f;
-        justify-content: flex-start;
-        color: #ffffff;
-        font-family: "Open Sans", sans-serif;
-        text-align: center;
-      }
-    
-      .Box {
-        width: 300px;
-        height: 50vh;
-        margin-top: 20px;
-        flex-direction: column;
-        align-items: center;
-        color: black;
-        font-family: "Open Sans", sans-serif;
-      }
-      
-      .Instructions {
-          margin: 25px;
-      }
-    
-      input {
-          margin-top: 10px;
-      }
-    
-      button {
-          background: transparent;
-          border: none;
-      }
-}
-
-@media all and (max-width: 480px) {
-  .Body__Container {
+  .Body__Container__Register {
     background-color: #00171f;
+    min-height: 100vh;
     justify-content: flex-start;
     color: #ffffff;
     font-family: "Open Sans", sans-serif;
     text-align: center;
   }
 
-  .Box {
-    width: 300px;
-    height: 50vh;
+  .Box__Register {
+    width: 65vw;
+    height: 70vh;
+    background-color: #007ea7;
     margin-top: 20px;
+    margin-left: 13.75vw;
+    border-radius: 7px;
+    display: flex;
     flex-direction: column;
+    justify-content: space-around;
     align-items: center;
     color: black;
     font-family: "Open Sans", sans-serif;
   }
   
-  .Instructions {
-      margin: 25px;
+  .Instructions__Register {
+      padding: 25px;
+      font-size: 1.7em;
+  }
+
+  .Header__Register {
+    font-size: 1.5em;
   }
 
   input {
@@ -129,5 +41,136 @@
   button {
       background: transparent;
       border: none;
+      font-size: 1.4em;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .Body__Container__Register {
+    background-color: #00171f;
+    min-height: 100vh;
+    justify-content: flex-start;
+    color: #ffffff;
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+  }
+
+  .Box__Register {
+    width: 75vw;
+    height: 50vh;
+    background-color: #007ea7;
+    margin-top: 20px;
+    margin-left: 13.75vw;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: black;
+    font-family: "Open Sans", sans-serif;
+  }
+  
+  .Instructions__Register {
+      padding: 25px;
+      font-size: 1.7em;
+  }
+
+  .Header__Register {
+    font-size: 1.5em;
+  }
+
+  input {
+      margin-top: 10px;
+  }
+
+  button {
+      background: transparent;
+      border: none;
+      font-size: 1.4em;
+  }
+}
+
+@media all and (min-width: 480px) and (max-width: 768px) {
+  .Body__Container__Register {
+    background-color: #00171f;
+    min-height: 100vh;
+    justify-content: flex-start;
+    color: #ffffff;
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+  }
+
+  .Box__Register {
+    width: 75vw;
+    height: 50vh;
+    background-color: #007ea7;
+    margin-top: 20px;
+    margin-left: 13.75vw;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: black;
+    font-family: "Open Sans", sans-serif;
+  }
+  
+  .Instructions__Register {
+      padding: 25px;
+      font-size: 1.2em;
+  }
+
+  .Header__Register {
+    font-size: 1.3em;
+  }
+
+  input {
+      margin-top: 10px;
+  }
+
+  button {
+      background: transparent;
+      border: none;
+      font-size: 1.2em;
+  }
+}
+
+@media all and (max-width: 480px) {
+  .Body__Container__Register {
+    background-color: #00171f;
+    min-height: 100vh;
+    justify-content: flex-start;
+    color: #ffffff;
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+  }
+
+  .Box__Register {
+    width: 300px;
+    height: 30vh;
+    background-color: #007ea7;
+    margin-top: 20px;
+    margin-left: calc( 50% - 150px);
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: black;
+    font-family: "Open Sans", sans-serif;
+  }
+  
+  .Instructions__Register {
+      padding: 25px;
+  }
+
+  input {
+      margin-top: 10px;
+  }
+
+  button {
+      background: transparent;
+      border: none;
+      font-size: 1em;
   }
 }

@@ -3,7 +3,7 @@
 @media all and (min-width: 1024px) {
   .Nav__Container {
     background-color: #003459;
-    height: 60px;
+    height: 8vh;
     width: auto;
     display: flex;
     justify-content: space-around;
@@ -17,12 +17,12 @@
   }
 
   .Menu {
-    width: 150px;
+    width: 200px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-around;
     font-family: "Nova Flat", cursive;
-    margin-top: 5px;
+    margin-top: 15px;
     font-size: 20px;
   }
 }
@@ -44,7 +44,7 @@
   }
 
   .Menu {
-    width: 150px;
+    width: 200px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -71,12 +71,12 @@
   }
 
   .Menu {
-    width: 150px;
+    width: 200px;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    flex-direction: row;
+    justify-content: space-between;
     font-family: "Nova Flat", cursive;
-    margin-top: 10px;
+    margin-top: 20px;
     font-size: 1.2em;
   }
 }

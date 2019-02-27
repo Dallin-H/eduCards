@@ -97,44 +97,65 @@ class CardForm extends Component {
           button2="Logout"
           location2="/"
         />
-        <div>Insert a card for deck:</div>
-        <form>
-          <div>Question:</div>
-          <input
-            onChange={e => this.handleChange("question", e.target.value)}
-            value={this.state.question}
-          />
-          <div>Image URL: (if applicable)</div>
-          <input
-            onChange={e => this.handleChange("imgURL", e.target.value)}
-            value={this.state.imgURL}
-          />
-          <div>Correct Answer:</div>
-          <input
-            onChange={e => this.handleChange("correctAnswer", e.target.value)}
-            value={this.state.correctAnswer}
-          />
-          <div>Wrong Answer:</div>
-          <input
-            onChange={e => this.handleChange("wrongAnswer1", e.target.value)}
-            value={this.state.wrongAnswer1}
-          />
-          <div>Wrong Answer:</div>
-          <input
-            onChange={e => this.handleChange("wrongAnswer2", e.target.value)}
-            value={this.state.wrongAnswer2}
-          />
-          <div>Wrong Answer:</div>
-          <input
-            onChange={e => this.handleChange("wrongAnswer3", e.target.value)}
-            value={this.state.wrongAnswer3}
-          />
-        </form>
-        <div>
-          <button onClick={() => this.clearAll()}>Clear all</button>
-          <button onClick={() => this.createCard()}>Add card!</button>
+        <div className="CardForm__Page">
+          <div className="Spacer__CardForm" />
+          <div className="CardForm__Box">
+
+          <div className="Header__CardForm">Insert a card for your deck:</div>
+          
+            <div className="Header__CardForm">Question:</div>
+            <input
+              onChange={e => this.handleChange("question", e.target.value)}
+              value={this.state.question}
+            />
+            <div className="Header__CardForm">Image URL: (if applicable)</div>
+            <input
+              onChange={e => this.handleChange("imgURL", e.target.value)}
+              value={this.state.imgURL}
+            />
+            <div className="Header__CardForm">Correct Answer:</div>
+            <input
+              onChange={e => this.handleChange("correctAnswer", e.target.value)}
+              value={this.state.correctAnswer}
+            />
+            <div className="Header__CardForm">Wrong Answer:</div>
+            <input
+              onChange={e => this.handleChange("wrongAnswer1", e.target.value)}
+              value={this.state.wrongAnswer1}
+            />
+            <div className="Header__CardForm">Wrong Answer:</div>
+            <input
+              onChange={e => this.handleChange("wrongAnswer2", e.target.value)}
+              value={this.state.wrongAnswer2}
+            />
+            <div className="Header__CardForm">Wrong Answer:</div>
+            <input
+              onChange={e => this.handleChange("wrongAnswer3", e.target.value)}
+              value={this.state.wrongAnswer3}
+            />
+         
+          <div className="Buttons__CardForm">
+            <button
+              className="Button1__CardForm"
+              onClick={() => this.clearAll()}
+            >
+              Clear all
+            </button>
+            <button
+              className="Button1__CardForm"
+              onClick={() => this.createCard()}
+            >
+              Add card!
+            </button>
+          </div>
+          <button
+            className="Button1__CardForm"
+            onClick={() => this.startQuiz()}
+          >
+            Start test!
+          </button>
+          </div>
         </div>
-        <button onClick={() => this.startQuiz()}>Start test!</button>
       </div>
     );
   }

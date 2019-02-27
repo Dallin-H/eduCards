@@ -1,9 +1,68 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Permanent+Marker");
 
 @media all and (min-width: 1024px) {
+    .Body__DeckForm {
+        background-color: #00171f;
+        min-height: 100vh;
+        width: auto;
+      }
+    
+      .Spacer__DeckForm {
+          height: 10vh;
+      }
+
+      .Form__Container {
+        width: 300px;
+        height: 30vh;
+        background-color: #007ea7;
+        margin-left: calc(50% - 150px);
+        border-radius: 7px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        color: rgb(20, 20, 20);
+        font-family: "Open Sans", sans-serif;
+        font-size: 1.4em;
+      }
+
+      .Create__Deck {
+        font-size: .75em;
+        border-radius: 5px;
+      }
+
+      .Create__Deck:hover {
+        background-color: #cac436;
+      }
 }
 
 @media all and (min-width: 768px) and (max-width: 1024px) {
+    .Body__DeckForm {
+        background-color: #00171f;
+        min-height: 100vh;
+        width: auto;
+      }
+    
+      .Spacer__DeckForm {
+          height: 10vh;
+      }
+      .Form__Container {
+        width: 300px;
+        height: 30vh;
+        background-color: #007ea7;
+        margin-left: calc(50% - 150px);
+        border-radius: 7px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        color: rgb(20, 20, 20);
+        font-family: "Open Sans", sans-serif;
+        font-size: 1.4em;
+      }
+      .Create__Deck {
+        font-size: 1.4em;
+      }
 }
 
 @media all and (min-width: 480px) and (max-width: 768px) {

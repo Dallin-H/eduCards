@@ -42,43 +42,40 @@ class Register extends Component {
     return (
       <div>
         <Nav button1="Back" location1="/" />
-        <div className="Body__Container">
-          <div className="Instructions"> Welcome! Fill out the form below to create an account. </div>
-          <div className="Box">
-            <div>
-              <div>First name:</div>
-              <input
-                value={firstName}
-                onChange={e => this.handleChange("firstName", e.target.value)}
-              />
-            </div>
+        <div className="Body__Container__Register">
+          <div className="Instructions__Register">
+            {" "}
+            Welcome! Fill out the form below to create an account.{" "}
+          </div>
+          <div className="Box__Register">
+            <div className="Header__Register">First name:</div>
+            <input
+              value={firstName}
+              onChange={e => this.handleChange("firstName", e.target.value)}
+            />
 
-            <div>
-              <div>Last name:</div>
-              <input
-                value={lastName}
-                onChange={e => this.handleChange("lastName", e.target.value)}
-              />
-            </div>
+            <div className="Header__Register">Last name:</div>
+            <input
+              value={lastName}
+              onChange={e => this.handleChange("lastName", e.target.value)}
+            />
 
-            <div>
-              <div>Email:</div>
-              <input
-                value={email}
-                type="email"
-                onChange={e => this.handleChange("email", e.target.value)}
-              />
-            </div>
+            <div className="Header__Register">Email:</div>
+            <input
+              value={email}
+              type="email"
+              onChange={e => this.handleChange("email", e.target.value)}
+            />
 
-            <div>
-              <div>Password:</div>
-              <input
-                type="new-password"
-                value={password}
-                onChange={e => this.handleChange("password", e.target.value)}
-              />
-            </div>
-            <button onClick={this.register}>Create Account</button>
+            <div className="Header__Register">Password:</div>
+            <input
+              type="new-password"
+              value={password}
+              onChange={e => this.handleChange("password", e.target.value)}
+            />
+            <button className="Button1__Register" onClick={this.register}>
+              Create Account
+            </button>
           </div>
         </div>
       </div>

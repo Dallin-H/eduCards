@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Permanent+Marker");
+
+@media all and (min-width: 1024px) {
+  .Body__DeckEdit {
+    background-color: #00171f;
+    min-height: 100vh;
+    width: auto;
+  }
+
+  .Spacer__DeckEdit {
+    height: 8vh;
+  }
+
+  .Form__Container__DeckEdit {
+    width: 75vw;
+    height: 70vh;
+    background-color: #007ea7;
+    margin-left: 13.75vw;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: rgb(20, 20, 20);
+    font-family: "Open Sans", sans-serif;
+  }
+
+  .Header__DeckEdit {
+    font-family: "Open Sans", sans-serif;
+    font-size: 2em;
+  }
+
+  .Button1__DeckEdit {
+    font-family: "Open Sans", sans-serif;
+    font-size: 2em;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .Body__DeckEdit {
+    background-color: #00171f;
+    min-height: 100vh;
+    width: auto;
+  }
+
+  .Spacer__DeckEdit {
+    height: 8vh;
+  }
+
+  .Form__Container__DeckEdit {
+    width: 75vw;
+    height: 40vh;
+    background-color: #007ea7;
+    margin-left: 13.75vw;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: rgb(20, 20, 20);
+    font-family: "Open Sans", sans-serif;
+  }
+
+  .Header__DeckEdit {
+    font-family: "Open Sans", sans-serif;
+    font-size: 2em;
+  }
+
+  .Button1__DeckEdit {
+    font-family: "Open Sans", sans-serif;
+    font-size: 2em;
+  }
+}
+
+@media all and (min-width: 480px) and (max-width: 768px) {
+  .Body__DeckEdit {
+    background-color: #00171f;
+    min-height: 100vh;
+    width: auto;
+  }
+
+  .Spacer__DeckEdit {
+    height: 8vh;
+  }
+
+  .Form__Container__DeckEdit {
+    width: 75vw;
+    height: 30vh;
+    background-color: #007ea7;
+    margin-left: 13.75vw;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: rgb(20, 20, 20);
+    font-family: "Open Sans", sans-serif;
+  }
+
+  .Header__DeckEdit {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.2em;
+  }
+
+  .Button1__DeckEdit {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.2em;
+  }
+}
+
+@media all and (max-width: 480px) {
+  .Body__DeckEdit {
+    background-color: #00171f;
+    min-height: 100vh;
+    width: auto;
+  }
+
+  .Spacer__DeckEdit {
+    height: 10vh;
+  }
+
+  .Form__Container__DeckEdit {
+    width: 300px;
+    height: 30vh;
+    background-color: #007ea7;
+    margin-left: calc(50% - 150px);
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: rgb(20, 20, 20);
+    font-family: "Open Sans", sans-serif;
+  }
+
+  .Header__DeckEdit {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1em;
+  }
+
+  .Buttons__DeckEdit {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1em;
+  }
+}

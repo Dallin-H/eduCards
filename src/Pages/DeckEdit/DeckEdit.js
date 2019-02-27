@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Nav from "./../../Components/Nav/Nav";
 import axios from "axios";
+import "./DeckEdit.css";
 
 class DeckEdit extends Component {
   constructor(props) {
@@ -45,25 +46,25 @@ class DeckEdit extends Component {
     axios
       .put(`/api/updatedeck`, { deckID, title, description, imgURL })
       .then(res => {
-        alert('Changes saved!')
+        alert("Changes saved!");
       })
       .catch(err => {
         console.log(err);
       });
-  }
+  };
 
   deleteDeck = () => {
     const { deckID } = this.state;
     axios
       .delete(`/api/deletedeck/${deckID}`)
       .then(res => {
-        alert('Deck has been deleted')
-        this.props.history.push('/dashboard')
+        alert("Deck has been deleted");
+        this.props.history.push("/dashboard");
       })
       .catch(err => {
-        console.log(err)
-      })
-  }
+        console.log(err);
+      });
+  };
 
   render() {
     const { title, description, imgURL } = this.state;
@@ -76,31 +77,35 @@ class DeckEdit extends Component {
           button2="Logout"
           location2="/"
         />
-        <div>
-          Deck content
-          <form>
-            <div>Title:</div>
+        <div className="Body__DeckEdit">
+          <div className="Spacer__DeckEdit" />
+          <div className="Form__Container__DeckEdit">
+            <div className="Header__DeckEdit">Title:</div>
             <input
               value={title}
               onChange={e => this.handleChange("title", e.target.value)}
             />
-            <div>Description:</div>
+            <div className="Header__DeckEdit">Description:</div>
             <input
               value={description}
               onChange={e => this.handleChange("description", e.target.value)}
             />
-            <div>Image URL:</div>
+            <div className="Header__DeckEdit">Image URL:</div>
             <input
               value={imgURL}
               onChange={e => this.handleChange("imgURL", e.target.value)}
             />
-          </form>
-          <div>
-            <button onClick={this.updateDeck}>Update</button>
-            <button onClick={this.deleteDeck}>Delete</button>
+            <div className="Buttons__DeckEdit">
+              <button className="Button1__DeckEdit" onClick={this.updateDeck}>
+                Update
+              </button>
+              <button className="Button1__DeckEdit" onClick={this.deleteDeck}>
+                Delete
+              </button>
+            </div>
           </div>
+          <div>Cards</div>
         </div>
-        <div>Cards</div>
       </div>
     );
   }

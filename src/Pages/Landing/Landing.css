@@ -4,13 +4,16 @@
   .Body__Container__Landing {
     background-color: #00171f;
     height: 100vh;
+    width: 100vw;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  .Box__Landing {
+  .Box__Landing__Intro {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -21,13 +24,51 @@
     border-radius: 7px;
     margin-top: 40px;
     margin-bottom: 40px;
+    margin-right: auto;
+    margin-left: auto;
   }
-  .TextBox__Landing {
+
+  .TextBox__Landing__Intro {
     color: #ffffff;
     font-family: "Open Sans", sans-serif;
     width: 90%;
     text-align: center;
     font-size: 25px;
+  }
+
+  .Desktop__Family {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 90vw;
+  }
+
+  .Box__Landing {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #007ea7;
+    width: 25%;
+    height: 200px;
+    min-height: 100px;
+    border-radius: 7px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .TextBox__Landing {
+    color: #ffffff;
+    font-family: "Open Sans", sans-serif;
+    width: 90%;
+    text-align: center;
+    font-size: 1em;
+  }
+
+  .Mobile__View {
+    display: none;
   }
 }
 
@@ -37,7 +78,7 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
   }
 
@@ -52,6 +93,8 @@
     border-radius: 7px;
     margin-top: 40px;
     margin-bottom: 40px;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   .TextBox__Landing {
@@ -61,16 +104,26 @@
     text-align: center;
     font-size: 25px;
   }
+
+  .Desktop__View {
+    display: none;
+  }
+
+  .Mobile__View {
+    visibility: visible;
+    display: inline;
+  }
 }
 
 @media all and (min-width: 480px) and (max-width: 768px) {
   .Body__Container__Landing {
     background-color: #00171f;
     height: 100vh;
+    width: 100vw;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-end;
   }
 
   .Box__Landing {
@@ -84,6 +137,8 @@
     border-radius: 7px;
     margin-top: 40px;
     margin-bottom: 40px;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   .TextBox__Landing {
@@ -93,6 +148,14 @@
     text-align: center;
     font-size: 25px;
   }
+
+  .Desktop__View {
+    display: none;
+  }
+
+  .Mobile__View {
+    visibility: visible;
+  }
 }
 
 @media all and (max-width: 480px) {
@@ -101,7 +164,7 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
   }
 
@@ -115,13 +178,23 @@
     border-radius: 7px;
     margin-top: 20px;
     margin-bottom: 20px;
+    margin-right: auto;
+    margin-left: auto;
   }
-  
+
   .TextBox__Landing {
     color: #ffffff;
     font-family: "Open Sans", sans-serif;
     width: 90%;
     text-align: center;
     font-size: 20px;
+  }
+
+  .Desktop__View {
+    display: none;
+  }
+
+  .Mobile__View {
+    visibility: visible;
   }
 }

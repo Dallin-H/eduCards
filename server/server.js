@@ -31,6 +31,8 @@ massive(CONNECTION_STRING).then(db => {
   );
 });
 
+app.use( express.static( `${__dirname}/../build` ) );
+
 // Authentication Endpoints
 app.post("/auth/register", ac.register);
 app.post("/auth/login", ac.login);

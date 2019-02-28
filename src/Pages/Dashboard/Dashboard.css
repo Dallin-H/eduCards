@@ -46,7 +46,8 @@
     align-items: baseline;
   }
 
-  .Section1, .Section2 {
+  .Section1,
+  .Section2 {
     width: 400px;
   }
 }
@@ -132,6 +133,10 @@
     justify-content: center;
     align-content: space-around;
   }
+  .Section1,
+  .Section2 {
+    visibility: hidden;
+  }
 }
 
 @media all and (max-width: 480px) {
@@ -169,5 +174,9 @@
     flex-wrap: no-wrap;
     justify-content: center;
     align-content: space-around;
+  }
+  .Section1,
+  .Section2 {
+    visibility: hidden;
   }
 }

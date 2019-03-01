@@ -40,7 +40,7 @@ class Dashboard extends Component {
       // stay on current page
     }
 
-    axios.get("/api/decks").then(res => {
+    axios.get(`/api/decks/${userID}`).then(res => {
       this.setState({
         decks: res.data
       });
@@ -65,7 +65,7 @@ class Dashboard extends Component {
 
   editDeck = deckID => {
     this.props.history.push(`/deckedit/${deckID}`);
-  }
+  };
 
   createNewDeck = () => {
     this.props.history.push(`/deckform`);
@@ -89,18 +89,27 @@ class Dashboard extends Component {
       <div className="Page__Dashboard">
         <Nav button1="Logout" location1="/" logout={this.logout} />
         <div className="Body__Container__Dashboard">
-        <div className="Instructions__Dashboard"
-        onClick={e => this.createNewDeck()}>Create New Deck</div>
-        <div className="Linebreak" />
-        <div className="Divider">
-          <div className="Section1">
-            Section1
+          <div
+            className="Instructions__Dashboard"
+            onClick={e => this.createNewDeck()}
+          >
+            Create New Deck
           </div>
-          <div className="Deck__List__Dashboard">{mappedDecks}</div>
-          <div className="Section2">
-            Section2
+          <div className="Linebreak" />
+          <div className="Divider">
+            <div className="Section1">
+              <div className="Quote">
+                "There are no secrets to success. It is the resut of
+                preperation, hard work, and learning from failure" -Colin Powell
+              </div>
+            </div>
+            <div className="Deck__List__Dashboard">{mappedDecks}</div>
+            <div className="Section2">
+              <div className="Quote">
+                "Learning never exhausts the mind." -Leonardo da Vinci
+              </div>
+            </div>
           </div>
-        </div>
         </div>
       </div>
     );
@@ -108,9 +117,9 @@ class Dashboard extends Component {
 }
 
 const mapStateToProps = reduxState => {
-  const { id } = reduxState;
+  const { userID } = reduxState;
   return {
-    id
+    userID
   };
 };
 

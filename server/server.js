@@ -41,7 +41,7 @@ app.post("/auth/user", ac.getUser);
 
 // Standard Functionality Endpoints
 
-app.get("/api/decks", fc.getAllDecks); // displays decks on the dashboard
+app.get("/api/decks/:userID", fc.getAllDecks); // displays decks on the dashboard for that user
 app.get("/api/card/:deckID", fc.getDeckCards); // populates state in quiz
 app.get("/api/answers/:cardID", fc.getAnswers); // display answers for a question in quiz
 

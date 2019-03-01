@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Permanent+Marker");
 
+
+  .Deck__Title, .Deck__Description {
+    color: #050507;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.2em;
+  }
 @media all and (min-width: 1024px) {
     .Deck__Container {
         background-color: #007ea7;
@@ -13,8 +19,11 @@
       }
     
       .Cover__Image {
-        width: 100px;
-        margin-left: calc(50% - 50px);
+        max-width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 1vh;
+        margin-bottom: 1vh;
       }
 }
 
@@ -31,8 +40,11 @@
       }
     
       .Cover__Image {
-        width: 100px;
-        margin-left: calc(50% - 50px);
+        max-width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 1vh;
+        margin-bottom: 1vh;
       }
 }
 
@@ -49,8 +61,11 @@
   }
 
   .Cover__Image {
-    width: 100px;
-    margin-left: calc(50% - 50px);
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
   }
 }
 
@@ -71,13 +86,15 @@
   }
 
   .Deck__Description {
-    color: #c5c5c5;
+    color: #050507;
     margin: 5px;
   }
 
   .Cover__Image {
-    width: 100px;
-    margin-left: calc(50% - 50px);
-    margin-bottom: 5px;
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
   }
 }

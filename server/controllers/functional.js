@@ -1,7 +1,9 @@
 module.exports = {
   getAllDecks: (req, res) => {
+    const { userID } = req.params;
     const db = req.app.get("db");
-    db.decks.get_all_decks().then(decks => {
+    db.decks.get_all_decks({userID: userID})
+    .then(decks => {
       res.status(200).send(decks);
     });
   },

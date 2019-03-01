@@ -3,7 +3,7 @@
 @media all and (min-width: 1024px) {
   .Body__Container__Landing {
     background-color: #00171f;
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -75,7 +75,7 @@
 @media all and (min-width: 768px) and (max-width: 1024px) {
   .Body__Container__Landing {
     background-color: #00171f;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -118,7 +118,7 @@
 @media all and (min-width: 480px) and (max-width: 768px) {
   .Body__Container__Landing {
     background-color: #00171f;
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -161,7 +161,7 @@
 @media all and (max-width: 480px) {
   .Body__Container__Landing {
     background-color: #00171f;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;

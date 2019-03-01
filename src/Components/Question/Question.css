@@ -11,6 +11,7 @@
     flex-wrap: nowrap;
     justify-content: space-around;
     align-items: center;
+    padding-bottom: 2vh;
 
     background-color: #00a7e1;
     border-radius: 25px;
@@ -26,6 +27,7 @@
     height: 130px;
     max-width: 350px;
     border-radius: 15px;
+    margin-top: 10px;
   }
 }
 

@@ -31,9 +31,6 @@
         border-radius: 5px;
       }
 
-      .Create__Deck:hover {
-        background-color: #cac436;
-      }
 }
 
 @media all and (min-width: 768px) and (max-width: 1024px) {

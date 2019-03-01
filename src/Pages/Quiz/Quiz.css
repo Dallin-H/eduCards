@@ -1,23 +1,44 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Permanent+Marker");
 
-@media all and (min-width: 1024px) {
+.Linebreak__Quiz {
+  margin-left: 5vw;
+  height: 2px;
+  width: 25vw;
+  background-color: #d3d3d3;
+  margin-top: 5px;
+}
+
+@media all and (min-width: 1025px) {
     .Body__Quiz {
         background-color: #00171f;
         min-height: 100vh;
         width: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-content: center;
       }
     
       .Header__Quiz {
         color: #d3d3d3;
-        padding-top: 10vh;
-        padding-bottom: 15px;
-        padding-left: 5vw;
+        padding-top: 5vh;
         font-size: 2em;
         font-family: "Open Sans", sans-serif;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      .Linebreak__Quiz {
+        margin-left: auto;
+        margin-right: auto;
+        height: 2px;
+        width: 25vw;
+        background-color: #d3d3d3;
+        margin-top: 5px;
       }
 }
 
-@media all and (min-width: 768px) and (max-width: 1024px) {
+@media all and (min-width: 768px) and (max-width: 1025px) {
   .Body__Quiz {
     background-color: #00171f;
     min-height: 100vh;
@@ -32,6 +53,8 @@
     font-size: 2em;
     font-family: "Open Sans", sans-serif;
   }
+
+
 }
 
 @media all and (min-width: 480px) and (max-width: 768px) {

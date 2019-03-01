@@ -52,10 +52,11 @@ class Quiz extends Component {
 
   displayCard = () => {
     //axios call to get question from currentCardIndex
+
     this.setState(
       {
-        question: this.state.cards[this.state.currentCardIndex].question,
         cardID: this.state.cards[this.state.currentCardIndex].card_id,
+        question: this.state.cards[this.state.currentCardIndex].question,
         imgURL: this.state.cards[this.state.currentCardIndex].img_url
       },
       () => {
@@ -88,6 +89,21 @@ class Quiz extends Component {
     });
   };
 
+  selectCorrect = () => {
+    alert("That is correct! Here is your next card")
+    let {cards} = this.state;
+    let newCurrentCardIndex = Math.floor(Math.random() * cards.length);
+    this.setState({
+      currentCardIndex: newCurrentCardIndex
+    })
+    this.displayCard()
+    this.displayAnswers()
+  }
+
+  selectWrong() {
+    alert("Sorry, please try again.")
+  }
+
   //next button will increment current card index
   render() {
     return (
@@ -100,18 +116,20 @@ class Quiz extends Component {
         />
         <div className="Body__Quiz">
           <div className="Header__Quiz"> Question: </div>
-          <div className="Linebreak" />
+          <div className="Linebreak__Quiz" />
           <Question
             question={this.state.question}
             imgURL={this.state.imgURL}
           />
           <div className="Header__Quiz"> Select an answer below: </div>
-          <div className="Linebreak" />
+          <div className="Linebreak__Quiz" />
           <Answer
             correctAnswer={this.state.correctAnswer}
             wrongAnswer1={this.state.wrongAnswer1}
             wrongAnswer2={this.state.wrongAnswer2}
             wrongAnswer3={this.state.wrongAnswer3}
+            selectCorrect={this.selectCorrect}
+            selectWrong={this.selectWrong}
           />
         </div>
       </div>

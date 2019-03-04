@@ -14,7 +14,7 @@ function Nav(props) {
 
   return (
     <div className="Nav__Container">
-      <div className="logo">eduCards</div>
+      <div className="logo">eduDecks</div>
 
       <div className="Menu">
         {button1 && (

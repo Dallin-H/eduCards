@@ -14,11 +14,11 @@ const Deck = props => {
         alt={`${props.deckTitle} cover`}
         style={{ height: 100 }}
       />
-      <div className="Button_Container">
-        <button onClick={e => props.startDeck(props.deckID)}>
+      <div >
+        <button className="Buttons__Deck" onClick={e => props.startDeck(props.deckID)}>
           Start Quiz!
         </button>
-        <button onClick={e => props.editDeck(props.deckID)}>
+        <button className="Buttons__Deck" onClick={e => props.editDeck(props.deckID)}>
           Edit Deck</button>
       </div>
     </div>

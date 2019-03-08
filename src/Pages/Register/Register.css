@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Permanent+Marker");
 
-@media all and (min-width: 1024px) {
+/* @media all and (min-width: 1024px) { */
   .Body__Container__Register {
     background-color: #00171f;
     min-height: 100vh;
@@ -11,18 +11,27 @@
   }
 
   .Box__Register {
-    width: 65vw;
-    height: 70vh;
     background-color: #007ea7;
-    margin-top: 20px;
-    margin-left: 13.75vw;
+    width: 450px;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 7px;
+    
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     color: black;
     font-family: "Open Sans", sans-serif;
+
+    -webkit-box-shadow: 5px 5px 15px 5px #000000;
+    box-shadow: 5px 5px 15px 5px #000000;
+  }
+
+  .Box2__Register {
+    display: flex;
+    flex-direction: row;
   }
   
   .Instructions__Register {
@@ -30,22 +39,54 @@
       font-size: 1.7em;
   }
 
-  .Header__Register {
+  .Register__Text {
     font-size: 1.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 200px;
+    align-items: flex-end;
   }
 
-  input {
-      margin-top: 10px;
+  .Header__Register {
+    white-space: nowrap;
+    margin-top: 5px;
   }
 
-  button {
+  
+  .Register__Inputs {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+  
+  .Input__Register {
+    height: 1.4em;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid black;
+    
+    margin-top: 7px;
+  }
+  
+  .Button1__Register {
       background: transparent;
       border: none;
       font-size: 1.4em;
   }
-}
 
-@media all and (min-width: 768px) and (max-width: 1024px) {
+  .Button1__Register:hover {
+    color: #ffffff;
+    cursor: pointer;
+  }
+
+/* } */
+
+/* @media all and (min-width: 768px) and (max-width: 1024px) {
   .Body__Container__Register {
     background-color: #00171f;
     min-height: 100vh;
@@ -173,4 +214,4 @@
       border: none;
       font-size: 1em;
   }
-}
+} */

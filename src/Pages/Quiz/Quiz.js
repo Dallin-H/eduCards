@@ -90,37 +90,34 @@ class Quiz extends Component {
   };
 
   selectCorrect = () => {
-    alert("That is correct! Here is your next card")
-    let {cards} = this.state;
+    alert("That is correct! Here is your next card");
+    let { cards } = this.state;
     let newCurrentCardIndex = Math.floor(Math.random() * cards.length);
     this.setState({
       currentCardIndex: newCurrentCardIndex
-    })
-    this.displayCard()
-    this.displayAnswers()
-  }
+    });
+    this.displayCard();
+    this.displayAnswers();
+  };
 
   selectWrong() {
-    alert("Sorry, please try again.")
+    alert("Sorry, please try again.");
   }
 
   //next button will increment current card index
   render() {
     return (
       <div className="Quiz__Container">
-        <Nav
-          button1="Dashboard"
-          location1="/dashboard"
-          button2="Logout"
-          location2="/"
-        />
         <div className="Body__Quiz">
+          <Nav
+            button1="Dashboard"
+            location1="/dashboard"
+            button2="Logout"
+            location2="/"
+          />
           <div className="Header__Quiz"> Question: </div>
           <div className="Linebreak__Quiz" />
-          <Question
-            question={this.state.question}
-            imgURL={this.state.imgURL}
-          />
+          <Question question={this.state.question} imgURL={this.state.imgURL} />
           <div className="Header__Quiz"> Select an answer below: </div>
           <div className="Linebreak__Quiz" />
           <Answer

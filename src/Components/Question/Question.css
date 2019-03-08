@@ -17,6 +17,9 @@
     border-radius: 25px;
 
     font-family: "Open Sans", sans-serif;
+
+    -webkit-box-shadow: 5px 5px 15px 5px #000000;
+    box-shadow: 5px 5px 15px 5px #000000;
   }
 
   .Question__Text {

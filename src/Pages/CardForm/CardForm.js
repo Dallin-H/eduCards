@@ -90,50 +90,62 @@ class CardForm extends Component {
 
   render() {
     return (
-      <div>
+      <div className="CardForm__Container">
         <Nav
           button1="Dashboard"
           location1="/dashboard"
           button2="Logout"
           location2="/"
         />
-        <div className="CardForm__Page">
-          <div className="Spacer__CardForm" />
-          <div className="CardForm__Box">
+        <div className="Instructions__CardForm">
+          Insert a card for your deck:
+        </div>
+        <div className="CardForm__Box">
+          <div className="CardForm__InnerContainer">
+            <div className="Headers__CardForm">
+              <div className="Header__CardForm">Question:</div>
+              <div className="Header__CardForm">Image URL:</div>
+              <div className="Header__CardForm">Correct Answer:</div>
+              <div className="Header__CardForm">Wrong Answer:</div>
+              <div className="Header__CardForm">Wrong Answer:</div>
+              <div className="Header__CardForm">Wrong Answer:</div>
+            </div>
+            <div className="Inputs__CardForm">
+              <input className="Input__CardForm"
+                onChange={e => this.handleChange("question", e.target.value)}
+                value={this.state.question}
+              />
+              <input className="Input__CardForm"
+                onChange={e => this.handleChange("imgURL", e.target.value)}
+                value={this.state.imgURL}
+              />
+              <input className="Input__CardForm"
+                onChange={e =>
+                  this.handleChange("correctAnswer", e.target.value)
+                }
+                value={this.state.correctAnswer}
+              />
+              <input className="Input__CardForm"
+                onChange={e =>
+                  this.handleChange("wrongAnswer1", e.target.value)
+                }
+                value={this.state.wrongAnswer1}
+              />
+              <input className="Input__CardForm"
+                onChange={e =>
+                  this.handleChange("wrongAnswer2", e.target.value)
+                }
+                value={this.state.wrongAnswer2}
+              />
+              <input className="Input__CardForm"
+                onChange={e =>
+                  this.handleChange("wrongAnswer3", e.target.value)
+                }
+                value={this.state.wrongAnswer3}
+              />
+            </div>
+          </div>
 
-          <div className="Header__CardForm">Insert a card for your deck:</div>
-          
-            <div className="Header__CardForm">Question:</div>
-            <input
-              onChange={e => this.handleChange("question", e.target.value)}
-              value={this.state.question}
-            />
-            <div className="Header__CardForm">Image URL: (if applicable)</div>
-            <input
-              onChange={e => this.handleChange("imgURL", e.target.value)}
-              value={this.state.imgURL}
-            />
-            <div className="Header__CardForm">Correct Answer:</div>
-            <input
-              onChange={e => this.handleChange("correctAnswer", e.target.value)}
-              value={this.state.correctAnswer}
-            />
-            <div className="Header__CardForm">Wrong Answer:</div>
-            <input
-              onChange={e => this.handleChange("wrongAnswer1", e.target.value)}
-              value={this.state.wrongAnswer1}
-            />
-            <div className="Header__CardForm">Wrong Answer:</div>
-            <input
-              onChange={e => this.handleChange("wrongAnswer2", e.target.value)}
-              value={this.state.wrongAnswer2}
-            />
-            <div className="Header__CardForm">Wrong Answer:</div>
-            <input
-              onChange={e => this.handleChange("wrongAnswer3", e.target.value)}
-              value={this.state.wrongAnswer3}
-            />
-         
           <div className="Buttons__CardForm">
             <button
               className="Button1__CardForm"
@@ -154,7 +166,6 @@ class CardForm extends Component {
           >
             Start test!
           </button>
-          </div>
         </div>
       </div>
     );

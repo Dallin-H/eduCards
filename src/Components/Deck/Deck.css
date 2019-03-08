@@ -1,11 +1,27 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Permanent+Marker");
 
 
-  .Deck__Title, .Deck__Description {
+  .Deck__Title {
+    color: #ffffff;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.4em;
+  }
+
+  .Deck__Description {
     color: #050507;
     font-family: "Open Sans", sans-serif;
-    font-size: 1.2em;
+    font-size: 1em;
+    margin-top: 5px;
   }
+
+  .Buttons__Deck {
+    font-size: 1em;
+  }
+  .Buttons__Deck:hover {
+    cursor: pointer;
+    color: #ffffff;
+  }
+
 @media all and (min-width: 1024px) {
     .Deck__Container {
         background-color: #007ea7;
@@ -15,6 +31,11 @@
         flex-direction: column;
         justify-content: center;
         border-radius: 25px;
+
+        padding: 15px;
+
+        -webkit-box-shadow: 5px 5px 15px 5px #000000;
+        box-shadow: 5px 5px 15px 5px #000000;
     
       }
     
@@ -27,7 +48,7 @@
       }
 }
 
-@media all and (min-width: 768px) and (max-width: 1024px) {
+/* @media all and (min-width: 768px) and (max-width: 1024px) {
     .Deck__Container {
         background-color: #007ea7;
         width: 400px;
@@ -97,4 +118,4 @@
     margin-top: 1vh;
     margin-bottom: 1vh;
   }
-}
+} */

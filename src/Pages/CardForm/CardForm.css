@@ -1,191 +1,108 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Permanent+Marker");
 
 @media all and (min-width: 1024px) {
-    .CardForm__Page {
-        background-color: #00171f;
-        min-height: 100vh;
-        width: auto;
-      }
-    
-      .Spacer__CardForm {
-        height: 5vh;
-      }
-    
-      .CardForm__Box {
-        width: 75vw;
-        height: 90vh;
-        background-color: #007ea7;
-        margin-left: 13.5vw;
-        border-radius: 15px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        color: rgb(20, 20, 20);
-        font-family: "Open Sans", sans-serif;
-        font-size: 1.3em;
-      }
-    
-      .Header__CardForm {
-          margin-top: 30px;
-          font-family: "Open Sans", sans-serif;
-          font-size: 1.4em;
-      }
-    
-      .Buttons__CardForm {
-        width: 300px;
-        height: 50px;
-        background-color: #007ea7;
-        border-radius: 7px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        color: rgb(20, 20, 20);
-        font-family: "Open Sans", sans-serif;
-      }
-    
-      .Button1__CardForm {
-          font-family: "Open Sans", sans-serif;
-          font-size: 1.2em;
-      }
-}
-
-@media all and (min-width: 768px) and (max-width: 1024px) {
-    .CardForm__Page {
-        background-color: #00171f;
-        min-height: 100vh;
-        width: auto;
-      }
-    
-      .Spacer__CardForm {
-        height: 8vh;
-      }
-    
-      .CardForm__Box {
-        width: 75vw;
-        height: 75vh;
-        background-color: #007ea7;
-        margin-left: 13.5vw;
-        border-radius: 15px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        color: rgb(20, 20, 20);
-        font-family: "Open Sans", sans-serif;
-        font-size: 1.3em;
-      }
-    
-      .Header__CardForm {
-          margin-top: 30px;
-          font-family: "Open Sans", sans-serif;
-          font-size: 1.4em;
-      }
-    
-      .Buttons__CardForm {
-        width: 300px;
-        height: 50px;
-        background-color: #007ea7;
-        border-radius: 7px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        color: rgb(20, 20, 20);
-        font-family: "Open Sans", sans-serif;
-      }
-    
-      .Button1__CardForm {
-          font-family: "Open Sans", sans-serif;
-          font-size: 1.2em;
-      }
-}
-
-@media all and (min-width: 480px) and (max-width: 768px) {
-  .CardForm__Page {
+  .CardForm__Container {
     background-color: #00171f;
     min-height: 100vh;
-    width: auto;
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
   }
 
-  .Spacer__CardForm {
-    height: 8vh;
+  .Instructions__CardForm {
+    padding: 25px;
+    font-size: 1.3em;
+    color: #ffffff;
   }
 
   .CardForm__Box {
-    width: 75vw;
-    height: 60vh;
     background-color: #007ea7;
-    margin-left: 13.5vw;
-    border-radius: 10px;
+    width: 700px;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 7px;
+
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    color: rgb(20, 20, 20);
+    color: black;
     font-family: "Open Sans", sans-serif;
+
+    -webkit-box-shadow: 5px 5px 15px 5px #000000;
+    box-shadow: 5px 5px 15px 5px #000000;
+  }
+
+  .CardForm__InnerContainer {
+    background-color: #007ea7;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+    color: black;
+    font-family: "Open Sans", sans-serif;
+
+  }
+
+  .Headers__CardForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 200px;
+    align-items: flex-end;
   }
 
   .Header__CardForm {
-      margin-top: 15px;
+    white-space: nowrap;
+    margin-top: 6px;
+    font-size: 1.4em;
+
+  }
+
+  .Inputs__CardForm {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+
+  .Input__CardForm {
+    height: 1.4em;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid black;
+
+    margin-top: 7px;
   }
 
   .Buttons__CardForm {
-    width: 200px;
+    width: 300px;
     height: 50px;
     background-color: #007ea7;
     border-radius: 7px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     color: rgb(20, 20, 20);
     font-family: "Open Sans", sans-serif;
   }
 
   .Button1__CardForm {
-      font-family: "Open Sans", sans-serif;
-      font-size: 1em;
-  }
-}
-
-@media all and (max-width: 480px) {
-  .CardForm__Page {
-    background-color: #00171f;
-    min-height: 100vh;
-    width: auto;
-  }
-
-  .Spacer__CardForm {
-    height: 10vh;
-  }
-
-  .CardForm__Box {
-    width: 300px;
-    height: 50vh;
-    background-color: #007ea7;
-    margin-left: calc(50% - 150px);
-    border-radius: 7px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    color: rgb(20, 20, 20);
     font-family: "Open Sans", sans-serif;
+    background: transparent;
+    border: none;
+    font-size: 1.4em;
   }
 
-  .Buttons__CardForm {
-    width: 200px;
-    height: 5vh;
-    background-color: #007ea7;
-    margin-left: calc(50% - 150px);
-    border-radius: 7px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    color: rgb(20, 20, 20);
-    font-family: "Open Sans", sans-serif;
+  .Button1__CardForm:hover {
+    cursor: pointer;
+    color: #ffffff;
   }
 }

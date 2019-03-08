@@ -50,25 +50,34 @@ class DeckForm extends Component {
   render() {
     return (
       <div className="DeckForm__Container">
-        <Nav
-          button1="Dashboard"
-          location1="/dashboard"
-          button2="Logout"
-          location2="/"
-        />
         <div className="Body__DeckForm">
-          <div className="Spacer__DeckForm" />
+          <Nav
+            button1="Dashboard"
+            location1="/dashboard"
+            button2="Logout"
+            location2="/"
+          />
           <div className="Form__Container">
-            <div className="Header__DeckForm">Deck Name:</div>
-            <input onChange={e => this.handleChange("title", e.target.value)} />
-            <div className="Header__DeckForm">Description:</div>
-            <input
-              onChange={e => this.handleChange("description", e.target.value)}
-            />
-            <div className="Header__DeckForm">Image URL:</div>
-            <input
-              onChange={e => this.handleChange("img_url", e.target.value)}
-            />
+            <div className="Form__InnerContainer">
+              <div className="DeckForm__Text">
+                <div className="Header__DeckForm">Deck Name:</div>
+                <div className="Header__DeckForm">Description:</div>
+                <div className="Header__DeckForm">Image URL:</div>
+              </div>
+              <div className="DeckForm__Inputs">
+                <input className="Input__DeckForm"
+                  onChange={e => this.handleChange("title", e.target.value)}
+                />
+                <input className="Input__DeckForm"
+                  onChange={e =>
+                    this.handleChange("description", e.target.value)
+                  }
+                />
+                <input className="Input__DeckForm"
+                  onChange={e => this.handleChange("img_url", e.target.value)}
+                />
+              </div>
+            </div>
             <button className="Create__Deck" onClick={() => this.createDeck()}>
               Create Deck!
             </button>

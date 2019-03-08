@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Permanent+Marker");
 
-@media all and (min-width: 1024px) {
+
   .Body__Container__Dashboard {
     background-color: #00171f;
     display: flex;
@@ -16,6 +16,11 @@
 
   .Instructions__Dashboard {
     padding: 25px;
+    font-size: 1.3em;
+  }
+  
+  .Instructions__Dashboard:hover {
+    cursor: pointer;
   }
 
   button {
@@ -56,9 +61,8 @@
     font-style: italic;
   }
 
-}
 
-@media all and (min-width: 768px) and (max-width: 1024px) {
+/* @media all and (min-width: 768px) and (max-width: 1024px) {
   .Body__Container__Dashboard {
     background-color: #00171f;
     display: flex;
@@ -190,4 +194,4 @@
   .Section2 {
     visibility: hidden;
   }
-}
+} */

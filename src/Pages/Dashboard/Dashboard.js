@@ -87,8 +87,8 @@ class Dashboard extends Component {
     });
     return (
       <div className="Page__Dashboard">
-        <Nav button1="Logout" location1="/" logout={this.logout} />
         <div className="Body__Container__Dashboard">
+          <Nav button1="Logout" location1="/" logout={this.logout} />
           <div
             className="Instructions__Dashboard"
             onClick={e => this.createNewDeck()}

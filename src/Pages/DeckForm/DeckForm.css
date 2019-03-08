@@ -1,39 +1,87 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Permanent+Marker");
 
 @media all and (min-width: 1024px) {
-    .Body__DeckForm {
-        background-color: #00171f;
-        min-height: 100vh;
-        width: auto;
-      }
-    
-      .Spacer__DeckForm {
-          height: 10vh;
-      }
+  .Body__DeckForm {
+    background-color: #00171f;
+    min-height: 100vh;
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+  }
 
-      .Form__Container {
-        width: 300px;
-        height: 30vh;
-        background-color: #007ea7;
-        margin-left: calc(50% - 150px);
-        border-radius: 7px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        color: rgb(20, 20, 20);
-        font-family: "Open Sans", sans-serif;
-        font-size: 1.4em;
-      }
+  .Form__Container {
+    background-color: #007ea7;
+    width: 450px;
+    height: 200px;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 7px;
 
-      .Create__Deck {
-        font-size: .75em;
-        border-radius: 5px;
-      }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: black;
+    font-family: "Open Sans", sans-serif;
 
+    -webkit-box-shadow: 5px 5px 15px 5px #000000;
+    box-shadow: 5px 5px 15px 5px #000000;
+  }
+
+  .Form__InnerContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .DeckForm__Text {
+    font-size: 1.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 200px;
+    align-items: flex-end;
+  }
+
+  .Header__DeckForm {
+    white-space: nowrap;
+    margin-top: 5px;
+  }
+
+  .DeckForm__Inputs {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+
+  .Input__DeckForm {
+    height: 1.4em;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid black;
+
+    margin-top: 7px;
+  }
+
+  .Create__Deck {
+    background: transparent;
+    border: none;
+    font-size: 1.4em;
+  }
+
+  .Create__Deck:hover {
+    color: #ffffff;
+    cursor: pointer;
+  }
 }
 
-@media all and (min-width: 768px) and (max-width: 1024px) {
+/* @media all and (min-width: 768px) and (max-width: 1024px) {
     .Body__DeckForm {
         background-color: #00171f;
         min-height: 100vh;
@@ -111,4 +159,4 @@
     color: rgb(20, 20, 20);
     font-family: "Open Sans", sans-serif;
   }
-}
+} */

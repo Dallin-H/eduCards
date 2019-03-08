@@ -58,28 +58,35 @@ class Login extends Component {
 
     return (
       <div className="Page__Login">
-        <Nav button1="Back" location1="/" />
         <div className="Body__Container__Login">
+          <Nav button1="Back" location1="/" />
           <div className="Instructions__Login"> Welcome back! </div>
           <div className="Box__Login">
-            <div>
-              <div>Email:</div>
+            <div className="Box2__Login">
+
+            <div className="Login__Text">
+              <div className="Header__Login">Email:</div>
+              <div className="Header__Login">Password:</div>
+            </div>
+            <div className="Login__Inputs">
               <input
+                className="Input__Login"
                 value={email}
                 type="email"
                 onChange={e => this.handleChange("email", e.target.value)}
               />
-            </div>
-            <div>
-              <div>Password:</div>
               <input
+                className="Input__Login"
                 value={password}
                 type="current-password"
                 onChange={e => this.handleChange("password", e.target.value)}
               />
             </div>
+            </div>
             <Link to="/dashboard">
-              <button onClick={e => this.login()}>Login!</button>
+              <button className="Button1__Login" onClick={e => this.login()}>
+                Login!
+              </button>
             </Link>
           </div>
         </div>

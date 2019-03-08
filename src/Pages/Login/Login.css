@@ -11,35 +11,84 @@
   }
 
   .Box__Login {
-    width: 300px;
-    height: 30vh;
     background-color: #007ea7;
-    margin-top: 20px;
-    margin-left: calc( 50% - 150px);
+    width: 450px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 7px;
+    
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     color: black;
     font-family: "Open Sans", sans-serif;
+
+    -webkit-box-shadow: 5px 5px 15px 5px #000000;
+    box-shadow: 5px 5px 15px 5px #000000;
   }
   
   .Instructions__Login {
       padding: 25px;
   }
 
-  input {
-      margin-top: 10px;
+  .Box2__Login {
+    display: flex;
+    flex-direction: row;
   }
 
-  button {
+  .Instructions__Login {
+    padding: 25px;
+    font-size: 1.7em;
+}
+
+  .Login__Text {
+    font-size: 1.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 200px;
+    align-items: flex-end;
+  }
+
+  .Header__Login {
+    white-space: nowrap;
+    margin-top: 5px;
+  }
+
+  .Login__Inputs {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+
+  .Input__Login {
+    height: 1.4em;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid black;
+    
+    margin-top: 7px;
+  }
+  
+  .Button1__Login {
       background: transparent;
       border: none;
+      font-size: 1.4em;  
+  }
+
+  .Button1__Login:hover {
+    color: #ffffff;
+    cursor: pointer;
   }
 }
 
-@media all and (min-width: 768px) and (max-width: 1024px) {
+/* @media all and (min-width: 768px) and (max-width: 1024px) {
   .Body__Container__Login {
     background-color: #00171f;
     min-height: 100vh;
@@ -68,14 +117,7 @@
       padding: 25px;
   }
 
-  input {
-      margin-top: 10px;
-  }
-
-  button {
-      background: transparent;
-      border: none;
-  }
+ 
 }
 
 @media all and (min-width: 480px) and (max-width: 768px) {
@@ -154,4 +196,4 @@
       background: transparent;
       border: none;
   }
-}
+} */

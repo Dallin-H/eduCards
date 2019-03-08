@@ -70,31 +70,37 @@ class DeckEdit extends Component {
     const { title, description, imgURL } = this.state;
 
     return (
-      <div>
+        <div className="Body__DeckEdit">
         <Nav
           button1="Dashboard"
           location1="/dashboard"
           button2="Logout"
           location2="/"
         />
-        <div className="Body__DeckEdit">
-          <div className="Spacer__DeckEdit" />
-          <div className="Form__Container__DeckEdit">
-            <div className="Header__DeckEdit">Title:</div>
-            <input
-              value={title}
-              onChange={e => this.handleChange("title", e.target.value)}
-            />
-            <div className="Header__DeckEdit">Description:</div>
-            <input
-              value={description}
-              onChange={e => this.handleChange("description", e.target.value)}
-            />
-            <div className="Header__DeckEdit">Image URL:</div>
-            <input
-              value={imgURL}
-              onChange={e => this.handleChange("imgURL", e.target.value)}
-            />
+          <div className="Box__DeckEdit">
+            <div className="HeadersInputs__DeckEdit">
+              <div className="Headers__Box">
+                <div className="Header__DeckEdit">Title:</div>
+                <div className="Header__DeckEdit">Description:</div>
+                <div className="Header__DeckEdit">Image URL:</div>
+              </div>
+              <div className="Inputs__Box">
+                <input className="Input__DeckEdit"
+                  value={title}
+                  onChange={e => this.handleChange("title", e.target.value)}
+                />
+                <input className="Input__DeckEdit"
+                  value={description}
+                  onChange={e =>
+                    this.handleChange("description", e.target.value)
+                  }
+                />
+                <input className="Input__DeckEdit"
+                  value={imgURL}
+                  onChange={e => this.handleChange("imgURL", e.target.value)}
+                />
+              </div>
+            </div>
             <div className="Buttons__DeckEdit">
               <button className="Button1__DeckEdit" onClick={this.updateDeck}>
                 Update
@@ -104,9 +110,7 @@ class DeckEdit extends Component {
               </button>
             </div>
           </div>
-          <div>Cards</div>
         </div>
-      </div>
     );
   }
 }
